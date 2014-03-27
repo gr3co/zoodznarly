@@ -1,0 +1,37 @@
+
+State Machine - |chipInterface|GradeGuessTop:ggt|guessControlFsm:gcfsm|currState
+Name currState.gradeZoodS currState.gradeZnarlyS currState.loadGuessS currState.waitingS currState.doneS 
+currState.waitingS 0 0 0 0 0 
+currState.loadGuessS 0 0 1 1 0 
+currState.gradeZnarlyS 0 1 0 1 0 
+currState.gradeZoodS 1 0 0 1 0 
+currState.doneS 0 0 0 1 1 
+
+State Machine - |chipInterface|GradeGuessTop:ggt|GradeZood:gz0|currentState
+Name currentState.done currentState.check0 currentState.check3 currentState.check2 currentState.check1 currentState.waiting 
+currentState.waiting 0 0 0 0 0 0 
+currentState.check1 0 0 0 0 1 1 
+currentState.check2 0 0 0 1 0 1 
+currentState.check3 0 0 1 0 0 1 
+currentState.check0 0 1 0 0 0 1 
+currentState.done 1 0 0 0 0 1 
+
+State Machine - |chipInterface|GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState
+Name currentState.done currentState.check0 currentState.check3 currentState.check2 currentState.check1 currentState.waiting 
+currentState.waiting 0 0 0 0 0 0 
+currentState.check1 0 0 0 0 1 1 
+currentState.check2 0 0 0 1 0 1 
+currentState.check3 0 0 1 0 0 1 
+currentState.check0 0 1 0 0 0 1 
+currentState.done 1 0 0 0 0 1 
+
+State Machine - |chipInterface|topCoinAccept:tca|coinAccept:ca|currState
+Name currState.d1ch3 currState.d1ch2 currState.d1ch1 currState.d1ch0 currState.d0ch3 currState.d0ch2 currState.d0ch1 currState.d0ch0 
+currState.d0ch0 0 0 0 0 0 0 0 0 
+currState.d0ch1 0 0 0 0 0 0 1 1 
+currState.d0ch2 0 0 0 0 0 1 0 1 
+currState.d0ch3 0 0 0 0 1 0 0 1 
+currState.d1ch0 0 0 0 1 0 0 0 1 
+currState.d1ch1 0 0 1 0 0 0 0 1 
+currState.d1ch2 0 1 0 0 0 0 0 1 
+currState.d1ch3 1 0 0 0 0 0 0 1 

@@ -1,0 +1,968 @@
+|chipInterface
+SW[0] => loadMaster:lms.LoadShape[0]
+SW[0] => GradeGuessTop:ggt.Guess[0]
+SW[1] => loadMaster:lms.LoadShape[1]
+SW[1] => GradeGuessTop:ggt.Guess[1]
+SW[2] => loadMaster:lms.LoadShape[2]
+SW[2] => GradeGuessTop:ggt.Guess[2]
+SW[3] => loadMaster:lms.ShapeLocation[0]
+SW[3] => GradeGuessTop:ggt.Guess[3]
+SW[4] => loadMaster:lms.ShapeLocation[1]
+SW[4] => GradeGuessTop:ggt.Guess[4]
+SW[5] => GradeGuessTop:ggt.Guess[5]
+SW[6] => GradeGuessTop:ggt.Guess[6]
+SW[7] => GradeGuessTop:ggt.Guess[7]
+SW[8] => GradeGuessTop:ggt.Guess[8]
+SW[9] => GradeGuessTop:ggt.Guess[9]
+SW[10] => GradeGuessTop:ggt.Guess[10]
+SW[11] => GradeGuessTop:ggt.Guess[11]
+SW[12] => ~NO_FANOUT~
+SW[13] => ~NO_FANOUT~
+SW[14] => ~NO_FANOUT~
+SW[15] => ~NO_FANOUT~
+SW[16] => topCoinAccept:tca.CoinValue[0]
+SW[17] => topCoinAccept:tca.CoinValue[1]
+KEY[0] => topCoinAccept:tca.reset
+KEY[0] => loadMaster:lms.reset
+KEY[0] => GradeGuessTop:ggt.reset
+KEY[1] => topCoinAccept:tca.CoinInserted
+KEY[2] => topCoinAccept:tca.StartGame
+KEY[3] => GradeGuessTop:ggt.GradeIt
+KEY[3] => loadMaster:lms.LoadShapeNow
+CLOCK_50 => topCoinAccept:tca.CLOCK_50
+CLOCK_50 => loadMaster:lms.CLOCK_50
+CLOCK_50 => GradeGuessTop:ggt.CLOCK_50
+HEX0[0] <= BCDtoSevenSegment:ng.port0
+HEX0[1] <= BCDtoSevenSegment:ng.port0
+HEX0[2] <= BCDtoSevenSegment:ng.port0
+HEX0[3] <= BCDtoSevenSegment:ng.port0
+HEX0[4] <= BCDtoSevenSegment:ng.port0
+HEX0[5] <= BCDtoSevenSegment:ng.port0
+HEX0[6] <= BCDtoSevenSegment:ng.port0
+HEX1[0] <= BCDtoSevenSegment:rn.port0
+HEX1[1] <= BCDtoSevenSegment:rn.port0
+HEX1[2] <= BCDtoSevenSegment:rn.port0
+HEX1[3] <= BCDtoSevenSegment:rn.port0
+HEX1[4] <= BCDtoSevenSegment:rn.port0
+HEX1[5] <= BCDtoSevenSegment:rn.port0
+HEX1[6] <= BCDtoSevenSegment:rn.port0
+HEX2[0] <= BCDtoSevenSegment:zo.port0
+HEX2[1] <= BCDtoSevenSegment:zo.port0
+HEX2[2] <= BCDtoSevenSegment:zo.port0
+HEX2[3] <= BCDtoSevenSegment:zo.port0
+HEX2[4] <= BCDtoSevenSegment:zo.port0
+HEX2[5] <= BCDtoSevenSegment:zo.port0
+HEX2[6] <= BCDtoSevenSegment:zo.port0
+HEX3[0] <= BCDtoSevenSegment:zn.port0
+HEX3[1] <= BCDtoSevenSegment:zn.port0
+HEX3[2] <= BCDtoSevenSegment:zn.port0
+HEX3[3] <= BCDtoSevenSegment:zn.port0
+HEX3[4] <= BCDtoSevenSegment:zn.port0
+HEX3[5] <= BCDtoSevenSegment:zn.port0
+HEX3[6] <= BCDtoSevenSegment:zn.port0
+LEDG[0] <= GradeGuessTop:ggt.GameWon
+LEDG[1] <= GradeGuessTop:ggt.GameOver
+LEDG[2] <= topCoinAccept:tca.ready
+LEDG[3] <= <GND>
+LEDG[4] <= <GND>
+LEDG[5] <= <GND>
+LEDG[6] <= <GND>
+LEDG[7] <= <GND>
+VGA_R[0] <= <GND>
+VGA_R[1] <= <GND>
+VGA_R[2] <= <GND>
+VGA_R[3] <= <GND>
+VGA_R[4] <= <GND>
+VGA_R[5] <= <GND>
+VGA_R[6] <= <GND>
+VGA_R[7] <= <GND>
+VGA_G[0] <= <GND>
+VGA_G[1] <= <GND>
+VGA_G[2] <= <GND>
+VGA_G[3] <= <GND>
+VGA_G[4] <= <GND>
+VGA_G[5] <= <GND>
+VGA_G[6] <= <GND>
+VGA_G[7] <= <GND>
+VGA_B[0] <= <GND>
+VGA_B[1] <= <GND>
+VGA_B[2] <= <GND>
+VGA_B[3] <= <GND>
+VGA_B[4] <= <GND>
+VGA_B[5] <= <GND>
+VGA_B[6] <= <GND>
+VGA_B[7] <= <GND>
+VGA_BLANK_N <= <GND>
+VGA_CLK <= <GND>
+VGA_SYNC_N <= <GND>
+VGA_VS <= <GND>
+VGA_HS <= <GND>
+
+
+|chipInterface|BCDtoSevenSegment:zn
+segment[0] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[1] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+bcd[0] => segment.IN1
+bcd[0] => segment.IN0
+bcd[0] => segment.IN1
+bcd[0] => segment.IN1
+bcd[0] => segment.IN0
+bcd[0] => segment.IN1
+bcd[0] => segment.IN0
+bcd[0] => segment.IN1
+bcd[0] => segment.IN1
+bcd[0] => segment.IN1
+bcd[0] => segment.IN1
+bcd[0] => segment.IN1
+bcd[1] => segment.IN1
+bcd[1] => segment.IN1
+bcd[1] => segment.IN0
+bcd[1] => segment.IN0
+bcd[1] => segment.IN0
+bcd[1] => segment.IN1
+bcd[1] => segment.IN0
+bcd[1] => segment.IN1
+bcd[2] => segment.IN0
+bcd[2] => segment.IN0
+bcd[2] => segment.IN1
+bcd[2] => segment.IN1
+bcd[2] => segment.IN0
+bcd[2] => segment.IN1
+bcd[2] => segment.IN1
+bcd[3] => segment.IN1
+bcd[3] => segment.IN1
+bcd[3] => segment.IN1
+bcd[3] => segment.IN1
+bcd[3] => segment.IN1
+
+
+|chipInterface|BCDtoSevenSegment:zo
+segment[0] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[1] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+bcd[0] => segment.IN1
+bcd[0] => segment.IN0
+bcd[0] => segment.IN1
+bcd[0] => segment.IN1
+bcd[0] => segment.IN0
+bcd[0] => segment.IN1
+bcd[0] => segment.IN0
+bcd[0] => segment.IN1
+bcd[0] => segment.IN1
+bcd[0] => segment.IN1
+bcd[0] => segment.IN1
+bcd[0] => segment.IN1
+bcd[1] => segment.IN1
+bcd[1] => segment.IN1
+bcd[1] => segment.IN0
+bcd[1] => segment.IN0
+bcd[1] => segment.IN0
+bcd[1] => segment.IN1
+bcd[1] => segment.IN0
+bcd[1] => segment.IN1
+bcd[2] => segment.IN0
+bcd[2] => segment.IN0
+bcd[2] => segment.IN1
+bcd[2] => segment.IN1
+bcd[2] => segment.IN0
+bcd[2] => segment.IN1
+bcd[2] => segment.IN1
+bcd[3] => segment.IN1
+bcd[3] => segment.IN1
+bcd[3] => segment.IN1
+bcd[3] => segment.IN1
+bcd[3] => segment.IN1
+
+
+|chipInterface|BCDtoSevenSegment:rn
+segment[0] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[1] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+bcd[0] => segment.IN1
+bcd[0] => segment.IN0
+bcd[0] => segment.IN1
+bcd[0] => segment.IN1
+bcd[0] => segment.IN0
+bcd[0] => segment.IN1
+bcd[0] => segment.IN0
+bcd[0] => segment.IN1
+bcd[0] => segment.IN1
+bcd[0] => segment.IN1
+bcd[0] => segment.IN1
+bcd[0] => segment.IN1
+bcd[1] => segment.IN1
+bcd[1] => segment.IN1
+bcd[1] => segment.IN0
+bcd[1] => segment.IN0
+bcd[1] => segment.IN0
+bcd[1] => segment.IN1
+bcd[1] => segment.IN0
+bcd[1] => segment.IN1
+bcd[2] => segment.IN0
+bcd[2] => segment.IN0
+bcd[2] => segment.IN1
+bcd[2] => segment.IN1
+bcd[2] => segment.IN0
+bcd[2] => segment.IN1
+bcd[2] => segment.IN1
+bcd[3] => segment.IN1
+bcd[3] => segment.IN1
+bcd[3] => segment.IN1
+bcd[3] => segment.IN1
+bcd[3] => segment.IN1
+
+
+|chipInterface|BCDtoSevenSegment:ng
+segment[0] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[1] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+bcd[0] => segment.IN1
+bcd[0] => segment.IN0
+bcd[0] => segment.IN1
+bcd[0] => segment.IN1
+bcd[0] => segment.IN0
+bcd[0] => segment.IN1
+bcd[0] => segment.IN0
+bcd[0] => segment.IN1
+bcd[0] => segment.IN1
+bcd[0] => segment.IN1
+bcd[0] => segment.IN1
+bcd[0] => segment.IN1
+bcd[1] => segment.IN1
+bcd[1] => segment.IN1
+bcd[1] => segment.IN0
+bcd[1] => segment.IN0
+bcd[1] => segment.IN0
+bcd[1] => segment.IN1
+bcd[1] => segment.IN0
+bcd[1] => segment.IN1
+bcd[2] => segment.IN0
+bcd[2] => segment.IN0
+bcd[2] => segment.IN1
+bcd[2] => segment.IN1
+bcd[2] => segment.IN0
+bcd[2] => segment.IN1
+bcd[2] => segment.IN1
+bcd[3] => segment.IN1
+bcd[3] => segment.IN1
+bcd[3] => segment.IN1
+bcd[3] => segment.IN1
+bcd[3] => segment.IN1
+
+
+|chipInterface|topCoinAccept:tca
+CoinValue[0] => coinAccept:ca.CoinValue[0]
+CoinValue[1] => coinAccept:ca.CoinValue[1]
+CoinInserted => coinAccept:ca.CoinInserted
+reset => reset.IN1
+CLOCK_50 => CLOCK_50.IN1
+StartGame => ~NO_FANOUT~
+masterLoaded => ready.IN1
+RoundNumber[0] => Equal0.IN31
+RoundNumber[1] => Equal0.IN30
+RoundNumber[2] => Equal0.IN29
+RoundNumber[3] => Equal0.IN28
+ready <= ready.DB_MAX_OUTPUT_PORT_TYPE
+NumGames[0] <= NumGames[0].DB_MAX_OUTPUT_PORT_TYPE
+NumGames[1] <= NumGames[1].DB_MAX_OUTPUT_PORT_TYPE
+NumGames[2] <= NumGames[2].DB_MAX_OUTPUT_PORT_TYPE
+NumGames[3] <= NumGames[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|chipInterface|topCoinAccept:tca|coinAccept:ca
+reset => currState~3.DATAIN
+CoinInserted => ~NO_FANOUT~
+CLOCK_50 => currState~1.DATAIN
+CoinValue[0] => ~NO_FANOUT~
+CoinValue[1] => ~NO_FANOUT~
+drop <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|chipInterface|topCoinAccept:tca|adder:a1
+A[0] => Add0.IN4
+A[1] => Add0.IN3
+A[2] => Add0.IN2
+A[3] => Add0.IN1
+B[0] => Add0.IN8
+B[1] => Add0.IN7
+B[2] => Add0.IN6
+B[3] => Add0.IN5
+Cin => Add1.IN10
+Sum[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Sum[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Sum[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Sum[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|chipInterface|topCoinAccept:tca|register:r1
+D[0] => Q.DATAB
+D[1] => Q.DATAB
+D[2] => Q.DATAB
+D[3] => Q.DATAB
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+clk => Q[3]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|chipInterface|topCoinAccept:tca|comparator:c1
+AltB <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+AeqB <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+AgtB <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+A[0] => Equal0.IN3
+A[0] => LessThan0.IN4
+A[0] => LessThan1.IN4
+A[1] => Equal0.IN2
+A[1] => LessThan0.IN3
+A[1] => LessThan1.IN3
+A[2] => Equal0.IN1
+A[2] => LessThan0.IN2
+A[2] => LessThan1.IN2
+A[3] => Equal0.IN0
+A[3] => LessThan0.IN1
+A[3] => LessThan1.IN1
+B[0] => Equal0.IN7
+B[0] => LessThan0.IN8
+B[0] => LessThan1.IN8
+B[1] => Equal0.IN6
+B[1] => LessThan0.IN7
+B[1] => LessThan1.IN7
+B[2] => Equal0.IN5
+B[2] => LessThan0.IN6
+B[2] => LessThan1.IN6
+B[3] => Equal0.IN4
+B[3] => LessThan0.IN5
+B[3] => LessThan1.IN5
+
+
+|chipInterface|loadMaster:lms
+LoadShape[0] => ~NO_FANOUT~
+LoadShape[1] => ~NO_FANOUT~
+LoadShape[2] => ~NO_FANOUT~
+ShapeLocation[0] => ~NO_FANOUT~
+ShapeLocation[1] => ~NO_FANOUT~
+LoadShapeNow => ~NO_FANOUT~
+reset => reset.IN4
+CLOCK_50 => CLOCK_50.IN4
+RoundNumber[0] => ~NO_FANOUT~
+RoundNumber[1] => ~NO_FANOUT~
+RoundNumber[2] => ~NO_FANOUT~
+RoundNumber[3] => ~NO_FANOUT~
+master0[0] <= register:m0.port4
+master0[1] <= register:m0.port4
+master0[2] <= register:m0.port4
+master1[0] <= register:m1.port4
+master1[1] <= register:m1.port4
+master1[2] <= register:m1.port4
+master2[0] <= register:m2.port4
+master2[1] <= register:m2.port4
+master2[2] <= register:m2.port4
+master3[0] <= register:m3.port4
+master3[1] <= register:m3.port4
+master3[2] <= register:m3.port4
+masterLoaded <= masterLoaded.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|chipInterface|loadMaster:lms|register:m0
+D[0] => Q.DATAB
+D[1] => Q.DATAB
+D[2] => Q.DATAB
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|chipInterface|loadMaster:lms|register:m1
+D[0] => Q.DATAB
+D[1] => Q.DATAB
+D[2] => Q.DATAB
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|chipInterface|loadMaster:lms|register:m2
+D[0] => Q.DATAB
+D[1] => Q.DATAB
+D[2] => Q.DATAB
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|chipInterface|loadMaster:lms|register:m3
+D[0] => Q.DATAB
+D[1] => Q.DATAB
+D[2] => Q.DATAB
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|chipInterface|loadMaster:lms|decoder:d1
+I[0] => ShiftLeft0.IN6
+I[1] => ShiftLeft0.IN5
+en => D.OUTPUTSELECT
+en => D.OUTPUTSELECT
+en => D.OUTPUTSELECT
+en => D.OUTPUTSELECT
+D[0] <= D.DB_MAX_OUTPUT_PORT_TYPE
+D[1] <= D.DB_MAX_OUTPUT_PORT_TYPE
+D[2] <= D.DB_MAX_OUTPUT_PORT_TYPE
+D[3] <= D.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|chipInterface|GradeGuessTop:ggt
+Guess[0] => loadGuess:lg.Guess[0]
+Guess[1] => loadGuess:lg.Guess[1]
+Guess[2] => loadGuess:lg.Guess[2]
+Guess[3] => loadGuess:lg.Guess[3]
+Guess[4] => loadGuess:lg.Guess[4]
+Guess[5] => loadGuess:lg.Guess[5]
+Guess[6] => loadGuess:lg.Guess[6]
+Guess[7] => loadGuess:lg.Guess[7]
+Guess[8] => loadGuess:lg.Guess[8]
+Guess[9] => loadGuess:lg.Guess[9]
+Guess[10] => loadGuess:lg.Guess[10]
+Guess[11] => loadGuess:lg.Guess[11]
+master0[0] => GradeZnarly:gzn.master0[0]
+master0[0] => GradeZood:gz0.master0[0]
+master0[1] => GradeZnarly:gzn.master0[1]
+master0[1] => GradeZood:gz0.master0[1]
+master0[2] => GradeZnarly:gzn.master0[2]
+master0[2] => GradeZood:gz0.master0[2]
+master1[0] => GradeZnarly:gzn.master1[0]
+master1[0] => GradeZood:gz0.master1[0]
+master1[1] => GradeZnarly:gzn.master1[1]
+master1[1] => GradeZood:gz0.master1[1]
+master1[2] => GradeZnarly:gzn.master1[2]
+master1[2] => GradeZood:gz0.master1[2]
+master2[0] => GradeZnarly:gzn.master2[0]
+master2[0] => GradeZood:gz0.master2[0]
+master2[1] => GradeZnarly:gzn.master2[1]
+master2[1] => GradeZood:gz0.master2[1]
+master2[2] => GradeZnarly:gzn.master2[2]
+master2[2] => GradeZood:gz0.master2[2]
+master3[0] => GradeZnarly:gzn.master3[0]
+master3[0] => GradeZood:gz0.master3[0]
+master3[1] => GradeZnarly:gzn.master3[1]
+master3[1] => GradeZood:gz0.master3[1]
+master3[2] => GradeZnarly:gzn.master3[2]
+master3[2] => GradeZood:gz0.master3[2]
+CLOCK_50 => CLOCK_50.IN1
+reset => reset.IN1
+GradeIt => guessControlFsm:gcfsm.GradeIt
+ready => guessControlFsm:gcfsm.ready
+Znarly[0] <= GradeZnarly:gzn.Znarly[0]
+Znarly[1] <= GradeZnarly:gzn.Znarly[1]
+Znarly[2] <= GradeZnarly:gzn.Znarly[2]
+Znarly[3] <= GradeZnarly:gzn.Znarly[3]
+Zood[0] <= Zood.DB_MAX_OUTPUT_PORT_TYPE
+Zood[1] <= Zood.DB_MAX_OUTPUT_PORT_TYPE
+Zood[2] <= Zood.DB_MAX_OUTPUT_PORT_TYPE
+Zood[3] <= Zood.DB_MAX_OUTPUT_PORT_TYPE
+RoundNumber[0] <= RoundNumber[0].DB_MAX_OUTPUT_PORT_TYPE
+RoundNumber[1] <= RoundNumber[1].DB_MAX_OUTPUT_PORT_TYPE
+RoundNumber[2] <= RoundNumber[2].DB_MAX_OUTPUT_PORT_TYPE
+RoundNumber[3] <= RoundNumber[3].DB_MAX_OUTPUT_PORT_TYPE
+GameWon <= GradeZnarly:gzn.GameWon
+GameOver <= GameOver.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|chipInterface|GradeGuessTop:ggt|GradeZnarly:gzn
+GradeZnarlyNow => seenOutZnarly[0]~reg0.CLK
+GradeZnarlyNow => seenOutZnarly[1]~reg0.CLK
+GradeZnarlyNow => seenOutZnarly[2]~reg0.CLK
+GradeZnarlyNow => seenOutZnarly[3]~reg0.CLK
+GradeZnarlyNow => GameWon~reg0.CLK
+GradeZnarlyNow => Znarly[0]~reg0.CLK
+GradeZnarlyNow => Znarly[1]~reg0.CLK
+GradeZnarlyNow => Znarly[2]~reg0.CLK
+GradeZnarlyNow => Znarly[3]~reg0.CLK
+guess0[0] => guess0[0].IN1
+guess0[1] => guess0[1].IN1
+guess0[2] => guess0[2].IN1
+guess1[0] => guess1[0].IN1
+guess1[1] => guess1[1].IN1
+guess1[2] => guess1[2].IN1
+guess2[0] => guess2[0].IN1
+guess2[1] => guess2[1].IN1
+guess2[2] => guess2[2].IN1
+guess3[0] => guess3[0].IN1
+guess3[1] => guess3[1].IN1
+guess3[2] => guess3[2].IN1
+master0[0] => master0[0].IN1
+master0[1] => master0[1].IN1
+master0[2] => master0[2].IN1
+master1[0] => master1[0].IN1
+master1[1] => master1[1].IN1
+master1[2] => master1[2].IN1
+master2[0] => master2[0].IN1
+master2[1] => master2[1].IN1
+master2[2] => master2[2].IN1
+master3[0] => master3[0].IN1
+master3[1] => master3[1].IN1
+master3[2] => master3[2].IN1
+RoundNumber[0] => LessThan0.IN8
+RoundNumber[1] => LessThan0.IN7
+RoundNumber[2] => LessThan0.IN6
+RoundNumber[3] => LessThan0.IN5
+Znarly[0] <= Znarly[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Znarly[1] <= Znarly[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Znarly[2] <= Znarly[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Znarly[3] <= Znarly[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+GameWon <= GameWon~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seenOutZnarly[0] <= seenOutZnarly[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seenOutZnarly[1] <= seenOutZnarly[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seenOutZnarly[2] <= seenOutZnarly[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seenOutZnarly[3] <= seenOutZnarly[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|chipInterface|GradeGuessTop:ggt|GradeZnarly:gzn|comparator:gm0
+AltB <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+AeqB <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+AgtB <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+A[0] => Equal0.IN3
+A[0] => LessThan0.IN4
+A[0] => LessThan1.IN4
+A[1] => Equal0.IN2
+A[1] => LessThan0.IN3
+A[1] => LessThan1.IN3
+A[2] => Equal0.IN1
+A[2] => LessThan0.IN2
+A[2] => LessThan1.IN2
+A[3] => Equal0.IN0
+A[3] => LessThan0.IN1
+A[3] => LessThan1.IN1
+B[0] => Equal0.IN7
+B[0] => LessThan0.IN8
+B[0] => LessThan1.IN8
+B[1] => Equal0.IN6
+B[1] => LessThan0.IN7
+B[1] => LessThan1.IN7
+B[2] => Equal0.IN5
+B[2] => LessThan0.IN6
+B[2] => LessThan1.IN6
+B[3] => Equal0.IN4
+B[3] => LessThan0.IN5
+B[3] => LessThan1.IN5
+
+
+|chipInterface|GradeGuessTop:ggt|GradeZnarly:gzn|comparator:gm1
+AltB <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+AeqB <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+AgtB <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+A[0] => Equal0.IN3
+A[0] => LessThan0.IN4
+A[0] => LessThan1.IN4
+A[1] => Equal0.IN2
+A[1] => LessThan0.IN3
+A[1] => LessThan1.IN3
+A[2] => Equal0.IN1
+A[2] => LessThan0.IN2
+A[2] => LessThan1.IN2
+A[3] => Equal0.IN0
+A[3] => LessThan0.IN1
+A[3] => LessThan1.IN1
+B[0] => Equal0.IN7
+B[0] => LessThan0.IN8
+B[0] => LessThan1.IN8
+B[1] => Equal0.IN6
+B[1] => LessThan0.IN7
+B[1] => LessThan1.IN7
+B[2] => Equal0.IN5
+B[2] => LessThan0.IN6
+B[2] => LessThan1.IN6
+B[3] => Equal0.IN4
+B[3] => LessThan0.IN5
+B[3] => LessThan1.IN5
+
+
+|chipInterface|GradeGuessTop:ggt|GradeZnarly:gzn|comparator:gm2
+AltB <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+AeqB <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+AgtB <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+A[0] => Equal0.IN3
+A[0] => LessThan0.IN4
+A[0] => LessThan1.IN4
+A[1] => Equal0.IN2
+A[1] => LessThan0.IN3
+A[1] => LessThan1.IN3
+A[2] => Equal0.IN1
+A[2] => LessThan0.IN2
+A[2] => LessThan1.IN2
+A[3] => Equal0.IN0
+A[3] => LessThan0.IN1
+A[3] => LessThan1.IN1
+B[0] => Equal0.IN7
+B[0] => LessThan0.IN8
+B[0] => LessThan1.IN8
+B[1] => Equal0.IN6
+B[1] => LessThan0.IN7
+B[1] => LessThan1.IN7
+B[2] => Equal0.IN5
+B[2] => LessThan0.IN6
+B[2] => LessThan1.IN6
+B[3] => Equal0.IN4
+B[3] => LessThan0.IN5
+B[3] => LessThan1.IN5
+
+
+|chipInterface|GradeGuessTop:ggt|GradeZnarly:gzn|comparator:gm3
+AltB <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+AeqB <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+AgtB <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+A[0] => Equal0.IN3
+A[0] => LessThan0.IN4
+A[0] => LessThan1.IN4
+A[1] => Equal0.IN2
+A[1] => LessThan0.IN3
+A[1] => LessThan1.IN3
+A[2] => Equal0.IN1
+A[2] => LessThan0.IN2
+A[2] => LessThan1.IN2
+A[3] => Equal0.IN0
+A[3] => LessThan0.IN1
+A[3] => LessThan1.IN1
+B[0] => Equal0.IN7
+B[0] => LessThan0.IN8
+B[0] => LessThan1.IN8
+B[1] => Equal0.IN6
+B[1] => LessThan0.IN7
+B[1] => LessThan1.IN7
+B[2] => Equal0.IN5
+B[2] => LessThan0.IN6
+B[2] => LessThan1.IN6
+B[3] => Equal0.IN4
+B[3] => LessThan0.IN5
+B[3] => LessThan1.IN5
+
+
+|chipInterface|GradeGuessTop:ggt|GradeZnarly:gzn|comparator:gw
+AltB <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+AeqB <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+AgtB <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+A[0] => Equal0.IN3
+A[0] => LessThan0.IN4
+A[0] => LessThan1.IN4
+A[1] => Equal0.IN2
+A[1] => LessThan0.IN3
+A[1] => LessThan1.IN3
+A[2] => Equal0.IN1
+A[2] => LessThan0.IN2
+A[2] => LessThan1.IN2
+A[3] => Equal0.IN0
+A[3] => LessThan0.IN1
+A[3] => LessThan1.IN1
+B[0] => Equal0.IN7
+B[0] => LessThan0.IN8
+B[0] => LessThan1.IN8
+B[1] => Equal0.IN6
+B[1] => LessThan0.IN7
+B[1] => LessThan1.IN7
+B[2] => Equal0.IN5
+B[2] => LessThan0.IN6
+B[2] => LessThan1.IN6
+B[3] => Equal0.IN4
+B[3] => LessThan0.IN5
+B[3] => LessThan1.IN5
+
+
+|chipInterface|GradeGuessTop:ggt|GradeZood:gz0
+GradeZoodNow => nextState.OUTPUTSELECT
+GradeZoodNow => nextState.OUTPUTSELECT
+GradeZoodNow => Selector4.IN2
+CLOCK_50 => currentState~1.DATAIN
+reset => currentState~3.DATAIN
+master0[0] => master0[0].IN1
+master0[1] => master0[1].IN1
+master0[2] => master0[2].IN1
+master1[0] => master1[0].IN1
+master1[1] => master1[1].IN1
+master1[2] => master1[2].IN1
+master2[0] => master2[0].IN1
+master2[1] => master2[1].IN1
+master2[2] => master2[2].IN1
+master3[0] => master3[0].IN1
+master3[1] => master3[1].IN1
+master3[2] => master3[2].IN1
+seenIn[0] => Selector9.IN2
+seenIn[0] => nextState.DATAA
+seenIn[0] => nextState.DATAA
+seenIn[1] => Selector8.IN2
+seenIn[1] => nextState.DATAA
+seenIn[1] => nextState.DATAA
+seenIn[2] => Selector7.IN2
+seenIn[2] => nextState.DATAA
+seenIn[2] => nextState.DATAA
+seenIn[3] => Selector6.IN2
+seenIn[3] => nextState.DATAA
+seenIn[3] => nextState.DATAA
+seenOutZood[0] <= seenOutZood.DB_MAX_OUTPUT_PORT_TYPE
+seenOutZood[1] <= seenOutZood.DB_MAX_OUTPUT_PORT_TYPE
+seenOutZood[2] <= seenOutZood.DB_MAX_OUTPUT_PORT_TYPE
+seenOutZood[3] <= seenOutZood.DB_MAX_OUTPUT_PORT_TYPE
+zoodDone <= zoodDone.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|chipInterface|GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3
+gradeZoodIndexNow => nextState.OUTPUTSELECT
+gradeZoodIndexNow => nextState.OUTPUTSELECT
+gradeZoodIndexNow => Selector3.IN2
+CLOCK_50 => currentState~1.DATAIN
+reset => currentState~3.DATAIN
+guessAtIndex[0] => ~NO_FANOUT~
+guessAtIndex[1] => ~NO_FANOUT~
+guessAtIndex[2] => ~NO_FANOUT~
+master0[0] => ~NO_FANOUT~
+master0[1] => ~NO_FANOUT~
+master0[2] => ~NO_FANOUT~
+master1[0] => ~NO_FANOUT~
+master1[1] => ~NO_FANOUT~
+master1[2] => ~NO_FANOUT~
+master2[0] => ~NO_FANOUT~
+master2[1] => ~NO_FANOUT~
+master2[2] => ~NO_FANOUT~
+master3[0] => ~NO_FANOUT~
+master3[1] => ~NO_FANOUT~
+master3[2] => ~NO_FANOUT~
+seenIn[0] => ~NO_FANOUT~
+seenIn[1] => ~NO_FANOUT~
+seenIn[2] => ~NO_FANOUT~
+seenIn[3] => ~NO_FANOUT~
+index[0] => Equal0.IN31
+index[0] => Equal1.IN0
+index[0] => Equal2.IN31
+index[0] => Equal3.IN1
+index[1] => Equal0.IN30
+index[1] => Equal1.IN31
+index[1] => Equal2.IN0
+index[1] => Equal3.IN0
+seenOut[0] <= <GND>
+seenOut[1] <= <GND>
+seenOut[2] <= <GND>
+seenOut[3] <= <GND>
+indexDone <= indexDone.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|chipInterface|GradeGuessTop:ggt|guessControlFsm:gcfsm
+GradeIt => nextState.IN0
+CLOCK_50 => currState~1.DATAIN
+reset => currState~3.DATAIN
+ready => nextState.IN1
+zoodDone => nextState.doneS.DATAB
+zoodDone => Selector1.IN2
+loadGuessNow <= loadGuessNow.DB_MAX_OUTPUT_PORT_TYPE
+GradeZnarlyNow <= GradeZnarlyNow.DB_MAX_OUTPUT_PORT_TYPE
+GradeZoodNow <= GradeZoodNow.DB_MAX_OUTPUT_PORT_TYPE
+IncRoundNumber <= <GND>
+
+
+|chipInterface|GradeGuessTop:ggt|loadGuess:lg
+Guess[0] => Guess[0].IN1
+Guess[1] => Guess[1].IN1
+Guess[2] => Guess[2].IN1
+Guess[3] => Guess[3].IN1
+Guess[4] => Guess[4].IN1
+Guess[5] => Guess[5].IN1
+Guess[6] => Guess[6].IN1
+Guess[7] => Guess[7].IN1
+Guess[8] => Guess[8].IN1
+Guess[9] => Guess[9].IN1
+Guess[10] => Guess[10].IN1
+Guess[11] => Guess[11].IN1
+loadGuessNow => loadGuessNow.IN4
+reset => reset.IN4
+CLOCK_50 => CLOCK_50.IN4
+guess0[0] <= register:g0.port4
+guess0[1] <= register:g0.port4
+guess0[2] <= register:g0.port4
+guess1[0] <= register:g1.port4
+guess1[1] <= register:g1.port4
+guess1[2] <= register:g1.port4
+guess2[0] <= register:g2.port4
+guess2[1] <= register:g2.port4
+guess2[2] <= register:g2.port4
+guess3[0] <= register:g3.port4
+guess3[1] <= register:g3.port4
+guess3[2] <= register:g3.port4
+
+
+|chipInterface|GradeGuessTop:ggt|loadGuess:lg|register:g0
+D[0] => Q.DATAB
+D[1] => Q.DATAB
+D[2] => Q.DATAB
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|chipInterface|GradeGuessTop:ggt|loadGuess:lg|register:g1
+D[0] => Q.DATAB
+D[1] => Q.DATAB
+D[2] => Q.DATAB
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|chipInterface|GradeGuessTop:ggt|loadGuess:lg|register:g2
+D[0] => Q.DATAB
+D[1] => Q.DATAB
+D[2] => Q.DATAB
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|chipInterface|GradeGuessTop:ggt|loadGuess:lg|register:g3
+D[0] => Q.DATAB
+D[1] => Q.DATAB
+D[2] => Q.DATAB
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|chipInterface|GradeGuessTop:ggt|register:rn
+D[0] => Q.DATAB
+D[1] => Q.DATAB
+D[2] => Q.DATAB
+D[3] => Q.DATAB
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+en => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clr => Q.OUTPUTSELECT
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+clk => Q[3]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|chipInterface|GradeGuessTop:ggt|adder:ad
+A[0] => Add0.IN4
+A[1] => Add0.IN3
+A[2] => Add0.IN2
+A[3] => Add0.IN1
+B[0] => Add0.IN8
+B[1] => Add0.IN7
+B[2] => Add0.IN6
+B[3] => Add0.IN5
+Cin => Add1.IN10
+Sum[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Sum[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Sum[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Sum[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+

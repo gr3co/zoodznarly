@@ -4,7 +4,7 @@ module chipInterface(
 	input logic [17:0] SW,
 	input logic [3:0] KEY,
 	input logic CLOCK_50,
-	output logic [6:0] HEX0, HEX1, HEX2, HEX3,
+	output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7,
 	output logic [7:0] LEDG,
 	output logic [7:0] VGA_R, VGA_G, VGA_B,
 	output logic VGA_BLANK_N, VGA_CLK, VGA_SYNC_N,
@@ -36,6 +36,8 @@ module chipInterface(
 	assign LEDG[0] = GameWon;
 	assign LEDG[1] = GameOver;
 	assign LEDG[2] = ready;
+	assign LEDG[3] = gamePlaying;
+	assign LEDG[4] = masterLoaded;
 	BCDtoSevenSegment zn(HEX3, Znarly);
 	BCDtoSevenSegment zo(HEX2, Zood);
 	BCDtoSevenSegment rn(HEX1, RoundNumber);

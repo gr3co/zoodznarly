@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Wed Mar 26 20:37:24 2014
+Analysis & Synthesis Status : Successful - Thu Mar 27 12:42:34 2014
 Quartus II 32-bit Version : 12.1 Build 177 11/07/2012 SJ Full Version
 Revision Name : mastermindVGA
 Top-level Entity Name : chipInterface
 Family : Cyclone IV E
-Total logic elements : 0
-    Total combinational functions : 0
-    Dedicated logic registers : 0
-Total registers : 0
-Total pins : 88
+Total logic elements : 88
+    Total combinational functions : 87
+    Dedicated logic registers : 27
+Total registers : 27
+Total pins : 116
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

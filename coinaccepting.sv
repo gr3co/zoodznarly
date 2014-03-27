@@ -1,15 +1,14 @@
 module topCoinAccept(
 	input logic [1:0] CoinValue,
-	input logic CoinInserted, reset, CLOCK_50, StartGame, masterLoaded,
-	input logic [3:0] RoundNumber,
+	input logic CoinInserted, reset, CLOCK_50, StartGame, masterLoaded, gamePlaying,
 	output logic ready,
 	output logic [3:0] NumGames);
 	
 	logic drop, gt, adderIn;
 	logic [3:0] numGamesIn;
 	
-	assign ready = gt&masterLoaded&(RoundNumber==0);
-	assign adderIn = (drop&~ready) ? 1 : (~drop&ready) ? 4'hf : 0;
+	assign ready = gt&masterLoaded&(~gamePlaying); //ready to play
+	assign adderIn = (drop&(NumGames < 7)) ? 1 : (StartGame&ready) ? 4'hf : 0;
 	
 	coinAccept ca(.*);
 	adder #(4) a1(adderIn, NumGames, 0, numGamesIn,);
@@ -30,35 +29,35 @@ module coinAccept(
    enum logic [2:0] {d0ch0 = 3'd0, d0ch1 = 3'd1, d0ch2 = 3'd2, d0ch3 = 3'd3, 
                      d1ch0 = 3'd4, d1ch1 = 3'd5, d1ch2 = 3'd6, d1ch3 = 3'd7}
                      currState, nextState;
-			
+	
 	logic [3:0] credit;
 
     //next state logic
     always_comb
         case(currState)
             d0ch0, d1ch0: unique case(coin)
-                2'd0: nextState = d0ch0;
-                2'd1: nextState = d0ch1;
-                2'd2: nextState = d0ch3;
-                2'd3: nextState = d1ch1;
+                2'd0: nextState = goNow ? d1ch0 : d0ch0;
+                2'd1: nextState = goNow ? d0ch1 : d0ch0;
+                2'd2: nextState = goNow ? d0ch3 : d0ch0;
+                2'd3: nextState = goNow ? d1ch1 : d0ch0;
                 endcase
             d0ch1, d1ch1: unique case(coin)
-                2'd0: nextState = d0ch1; 
-                2'd1: nextState = d0ch2;
-                2'd2: nextState = d1ch0;
-                2'd3: nextState = d1ch2;
+                2'd0: nextState = goNow ? d0ch1 : d0ch1; 
+                2'd1: nextState = goNow ? d0ch2 : d0ch1;
+                2'd2: nextState = goNow ? d1ch0 : d0ch1;
+                2'd3: nextState = goNow ? d1ch2 : d0ch1;
                 endcase
             d0ch2, d1ch2: unique case(coin)
-                2'd0: nextState = d0ch2;
-                2'd1: nextState = d0ch3;
-                2'd2: nextState = d1ch1;
-                2'd3: nextState = d1ch3;
+                2'd0: nextState = goNow ? d0ch2 : d0ch2;
+                2'd1: nextState = goNow ? d0ch3 : d0ch2;
+                2'd2: nextState = goNow ? d1ch1 : d0ch2;
+                2'd3: nextState = goNow ? d1ch3 : d0ch2;
                 endcase
             d0ch3, d1ch3: unique case(coin)
-                2'd0: nextState = d0ch3;
-                2'd1: nextState = d1ch0;
-                2'd2: nextState = d1ch2;
-                2'd3: nextState = d1ch0;
+                2'd0: nextState = goNow ? d0ch3 : d0ch3;
+                2'd1: nextState = goNow ? d1ch0 : d0ch3;
+                2'd2: nextState = goNow ? d1ch2 : d0ch3;
+                2'd3: nextState = goNow ? d1ch0 : d0ch3;
                 endcase
             default: nextState = d0ch0;
         endcase
@@ -79,12 +78,15 @@ module coinAccept(
         endcase
     end
 
-	 logic prevCoinInserted;
+	 logic prevCoinInserted, prevPrevCoinInserted, goNow;
     always_ff @(posedge CLOCK_50, posedge reset) begin
        if (reset == 1)
-            currState <= d0ch0;
-       else if (CoinInserted & ~prevCoinInserted)
-            currState <= nextState;
-		 prevCoinInserted <= CoinInserted;
+         currState <= d0ch0;
+       else begin
+         currState <= nextState;
+			prevCoinInserted <= CoinInserted;
+			prevPrevCoinInserted <= prevCoinInserted;
+			goNow <= prevCoinInserted & ~prevPrevCoinInserted;
+		end
 	end
 endmodule: coinAccept

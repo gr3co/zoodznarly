@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("/afs/ece.cmu.edu/usr/sgreco/Desktop/lab3b/output_files/") File("mastermindVGA.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("/afs/ece.cmu.edu/usr/gya/Private/240/lab3b/output_files/") File("mastermindVGA.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

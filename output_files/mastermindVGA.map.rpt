@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mastermindVGA
-Wed Mar 26 20:37:24 2014
+Thu Mar 27 12:42:34 2014
 Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Full Version
 
 
@@ -48,10 +48,14 @@ Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Full Version
  40. Port Connectivity Checks: "GradeGuessTop:ggt|GradeZnarly:gzn|comparator:gm1"
  41. Port Connectivity Checks: "GradeGuessTop:ggt|GradeZnarly:gzn|comparator:gm0"
  42. Port Connectivity Checks: "loadMaster:lms|decoder:d1"
- 43. Port Connectivity Checks: "topCoinAccept:tca|comparator:c1"
- 44. Port Connectivity Checks: "topCoinAccept:tca|adder:a1"
- 45. Elapsed Time Per Partition
- 46. Analysis & Synthesis Messages
+ 43. Port Connectivity Checks: "loadMaster:lms|BCDtoSevenSegment:h4"
+ 44. Port Connectivity Checks: "loadMaster:lms|BCDtoSevenSegment:h3"
+ 45. Port Connectivity Checks: "loadMaster:lms|BCDtoSevenSegment:h2"
+ 46. Port Connectivity Checks: "loadMaster:lms|BCDtoSevenSegment:h1"
+ 47. Port Connectivity Checks: "topCoinAccept:tca|comparator:c1"
+ 48. Port Connectivity Checks: "topCoinAccept:tca|adder:a1"
+ 49. Elapsed Time Per Partition
+ 50. Analysis & Synthesis Messages
 
 
 
@@ -77,16 +81,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 26 20:37:24 2014     ;
+; Analysis & Synthesis Status        ; Successful - Thu Mar 27 12:42:34 2014     ;
 ; Quartus II 32-bit Version          ; 12.1 Build 177 11/07/2012 SJ Full Version ;
 ; Revision Name                      ; mastermindVGA                             ;
 ; Top-level Entity Name              ; chipInterface                             ;
 ; Family                             ; Cyclone IV E                              ;
-; Total logic elements               ; 0                                         ;
-;     Total combinational functions  ; 0                                         ;
-;     Dedicated logic registers      ; 0                                         ;
-; Total registers                    ; 0                                         ;
-; Total pins                         ; 88                                        ;
+; Total logic elements               ; 88                                        ;
+;     Total combinational functions  ; 87                                        ;
+;     Dedicated logic registers      ; 27                                        ;
+; Total registers                    ; 27                                        ;
+; Total pins                         ; 116                                       ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 0                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                         ;
@@ -198,17 +202,17 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                   ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                               ; Library ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------+---------+
-; lab3b.sv                         ; yes             ; User SystemVerilog HDL File  ; /afs/ece.cmu.edu/usr/sgreco/Desktop/lab3b/lab3b.sv         ;         ;
-; hw7prob1.sv                      ; yes             ; User SystemVerilog HDL File  ; /afs/ece.cmu.edu/usr/sgreco/Desktop/lab3b/hw7prob1.sv      ;         ;
-; coinaccepting.sv                 ; yes             ; User SystemVerilog HDL File  ; /afs/ece.cmu.edu/usr/sgreco/Desktop/lab3b/coinaccepting.sv ;         ;
-; loadingmaster.sv                 ; yes             ; User SystemVerilog HDL File  ; /afs/ece.cmu.edu/usr/sgreco/Desktop/lab3b/loadingmaster.sv ;         ;
-; gradeguess.sv                    ; yes             ; User SystemVerilog HDL File  ; /afs/ece.cmu.edu/usr/sgreco/Desktop/lab3b/gradeguess.sv    ;         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                    ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------+---------+
+; lab3b.sv                         ; yes             ; User SystemVerilog HDL File  ; /afs/ece.cmu.edu/usr/gya/Private/240/lab3b/lab3b.sv         ;         ;
+; hw7prob1.sv                      ; yes             ; User SystemVerilog HDL File  ; /afs/ece.cmu.edu/usr/gya/Private/240/lab3b/hw7prob1.sv      ;         ;
+; coinaccepting.sv                 ; yes             ; User SystemVerilog HDL File  ; /afs/ece.cmu.edu/usr/gya/Private/240/lab3b/coinaccepting.sv ;         ;
+; loadingmaster.sv                 ; yes             ; User SystemVerilog HDL File  ; /afs/ece.cmu.edu/usr/gya/Private/240/lab3b/loadingmaster.sv ;         ;
+; gradeguess.sv                    ; yes             ; User SystemVerilog HDL File  ; /afs/ece.cmu.edu/usr/gya/Private/240/lab3b/gradeguess.sv    ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -216,36 +220,50 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
+; Estimated Total logic elements              ; 88    ;
 ;                                             ;       ;
-; Total combinational functions               ; 0     ;
+; Total combinational functions               ; 87    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 0     ;
+;     -- 4 input functions                    ; 36    ;
+;     -- 3 input functions                    ; 39    ;
+;     -- <=2 input functions                  ; 12    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
+;     -- normal mode                          ; 84    ;
+;     -- arithmetic mode                      ; 3     ;
 ;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
+; Total registers                             ; 27    ;
+;     -- Dedicated logic registers            ; 27    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 88    ;
+; I/O pins                                    ; 116   ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out                             ; 1     ;
-; Total fan-out                               ; 88    ;
-; Average fan-out                             ; 0.50  ;
+; Maximum fan-out                             ; 27    ;
+; Total fan-out                               ; 509   ;
+; Average fan-out                             ; 1.47  ;
 +---------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |chipInterface             ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 88   ; 0            ; |chipInterface      ;              ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                          ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
+; Compilation Hierarchy Node   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Library Name ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
+; |chipInterface               ; 87 (0)            ; 27 (0)       ; 0           ; 0            ; 0       ; 0         ; 116  ; 0            ; |chipInterface                                     ;              ;
+;    |BCDtoSevenSegment:ng|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |chipInterface|BCDtoSevenSegment:ng                ;              ;
+;    |loadMaster:lms|          ; 49 (9)            ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |chipInterface|loadMaster:lms                      ;              ;
+;       |BCDtoSevenSegment:h1| ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |chipInterface|loadMaster:lms|BCDtoSevenSegment:h1 ;              ;
+;       |BCDtoSevenSegment:h2| ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |chipInterface|loadMaster:lms|BCDtoSevenSegment:h2 ;              ;
+;       |BCDtoSevenSegment:h3| ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |chipInterface|loadMaster:lms|BCDtoSevenSegment:h3 ;              ;
+;       |BCDtoSevenSegment:h4| ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |chipInterface|loadMaster:lms|BCDtoSevenSegment:h4 ;              ;
+;       |register:m0|          ; 3 (3)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |chipInterface|loadMaster:lms|register:m0          ;              ;
+;       |register:m1|          ; 3 (3)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |chipInterface|loadMaster:lms|register:m1          ;              ;
+;       |register:m2|          ; 3 (3)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |chipInterface|loadMaster:lms|register:m2          ;              ;
+;       |register:m3|          ; 3 (3)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |chipInterface|loadMaster:lms|register:m3          ;              ;
+;    |topCoinAccept:tca|       ; 31 (5)            ; 15 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |chipInterface|topCoinAccept:tca                   ;              ;
+;       |coinAccept:ca|        ; 21 (21)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |chipInterface|topCoinAccept:tca|coinAccept:ca     ;              ;
+;       |register:r1|          ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |chipInterface|topCoinAccept:tca|register:r1       ;              ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -310,70 +328,49 @@ Encoding Type:  One-Hot
 +-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                       ;
-+----------------------------------------------------------------------------+-------------------------------------------------------------+
-; Register name                                                              ; Reason for Removal                                          ;
-+----------------------------------------------------------------------------+-------------------------------------------------------------+
-; GradeGuessTop:ggt|register:rn|Q[0..3]                                      ; Stuck at GND due to stuck port data_in                      ;
-; GradeGuessTop:ggt|GradeZnarly:gzn|Znarly[3]                                ; Stuck at GND due to stuck port data_in                      ;
-; loadMaster:lms|ShapeLocationIn[0,1]                                        ; Merged with loadMaster:lms|LoadShapeIn[2]                   ;
-; loadMaster:lms|LoadShapeIn[0,1]                                            ; Merged with loadMaster:lms|LoadShapeIn[2]                   ;
-; loadMaster:lms|register:m3|Q[1,2]                                          ; Merged with loadMaster:lms|register:m3|Q[0]                 ;
-; loadMaster:lms|register:m2|Q[1,2]                                          ; Merged with loadMaster:lms|register:m2|Q[0]                 ;
-; loadMaster:lms|register:m1|Q[1,2]                                          ; Merged with loadMaster:lms|register:m1|Q[0]                 ;
-; loadMaster:lms|register:m0|Q[1,2]                                          ; Merged with loadMaster:lms|register:m0|Q[0]                 ;
-; loadMaster:lms|LoadShapeIn[2]                                              ; Stuck at GND due to stuck port data_in                      ;
-; loadMaster:lms|register:m3|Q[0]                                            ; Stuck at GND due to stuck port data_in                      ;
-; loadMaster:lms|register:m2|Q[0]                                            ; Stuck at GND due to stuck port data_in                      ;
-; loadMaster:lms|register:m1|Q[0]                                            ; Stuck at GND due to stuck port data_in                      ;
-; loadMaster:lms|register:m0|Q[0]                                            ; Stuck at GND due to stuck port data_in                      ;
-; GradeGuessTop:ggt|GradeZnarly:gzn|Znarly[0..2]                             ; Stuck at GND due to stuck port data_in                      ;
-; GradeGuessTop:ggt|GradeZnarly:gzn|GameWon                                  ; Stuck at GND due to stuck port data_in                      ;
-; GradeGuessTop:ggt|loadGuess:lg|register:g3|Q[0..2]                         ; Stuck at GND due to stuck port data_in                      ;
-; GradeGuessTop:ggt|loadGuess:lg|register:g2|Q[0..2]                         ; Stuck at GND due to stuck port data_in                      ;
-; GradeGuessTop:ggt|loadGuess:lg|register:g1|Q[0..2]                         ; Stuck at GND due to stuck port data_in                      ;
-; GradeGuessTop:ggt|loadGuess:lg|register:g0|Q[0..2]                         ; Stuck at GND due to stuck port data_in                      ;
-; GradeGuessTop:ggt|GradeZnarly:gzn|seenOutZnarly[0..3]                      ; Stuck at VCC due to stuck port data_in                      ;
-; GradeGuessTop:ggt|GradeZood:gz0|currentState.check3                        ; Lost fanout                                                 ;
-; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.loadGuessS               ; Lost fanout                                                 ;
-; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState~4                        ; Lost fanout                                                 ;
-; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState~5                        ; Lost fanout                                                 ;
-; GradeGuessTop:ggt|GradeZood:gz0|currentState~4                             ; Lost fanout                                                 ;
-; GradeGuessTop:ggt|GradeZood:gz0|currentState~5                             ; Lost fanout                                                 ;
-; GradeGuessTop:ggt|GradeZood:gz0|currentState.check2                        ; Lost fanout                                                 ;
-; GradeGuessTop:ggt|GradeZood:gz0|currentState.check1                        ; Lost fanout                                                 ;
-; GradeGuessTop:ggt|GradeZood:gz0|currentState.check0                        ; Lost fanout                                                 ;
-; GradeGuessTop:ggt|GradeZood:gz0|currentState~6                             ; Lost fanout                                                 ;
-; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState~4       ; Lost fanout                                                 ;
-; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState~5       ; Lost fanout                                                 ;
-; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState~6       ; Lost fanout                                                 ;
-; topCoinAccept:tca|coinAccept:ca|currState~4                                ; Lost fanout                                                 ;
-; topCoinAccept:tca|coinAccept:ca|currState~5                                ; Lost fanout                                                 ;
-; topCoinAccept:tca|coinAccept:ca|currState~6                                ; Lost fanout                                                 ;
-; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState.waiting ; Stuck at GND due to stuck port clock                        ;
-; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState.done    ; Lost fanout                                                 ;
-; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState.check3  ; Lost fanout                                                 ;
-; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState.check2  ; Lost fanout                                                 ;
-; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState.check1  ; Lost fanout                                                 ;
-; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState.check0  ; Lost fanout                                                 ;
-; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZnarlyS             ; Stuck at GND due to stuck port data_in                      ;
-; GradeGuessTop:ggt|GradeZood:gz0|currentState.done                          ; Stuck at GND due to stuck port data_in                      ;
-; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.doneS                    ; Lost fanout                                                 ;
-; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.waitingS                 ; Lost fanout                                                 ;
-; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZoodS               ; Lost fanout                                                 ;
-; GradeGuessTop:ggt|GradeZood:gz0|currentState.waiting                       ; Lost fanout                                                 ;
-; topCoinAccept:tca|coinAccept:ca|currState.d1ch0                            ; Lost fanout                                                 ;
-; topCoinAccept:tca|coinAccept:ca|currState.d1ch1                            ; Lost fanout                                                 ;
-; topCoinAccept:tca|coinAccept:ca|currState.d1ch2                            ; Lost fanout                                                 ;
-; topCoinAccept:tca|coinAccept:ca|currState.d1ch3                            ; Lost fanout                                                 ;
-; topCoinAccept:tca|coinAccept:ca|currState.d0ch1                            ; Merged with topCoinAccept:tca|coinAccept:ca|currState.d0ch0 ;
-; topCoinAccept:tca|coinAccept:ca|currState.d0ch2                            ; Merged with topCoinAccept:tca|coinAccept:ca|currState.d0ch0 ;
-; topCoinAccept:tca|coinAccept:ca|currState.d0ch3                            ; Merged with topCoinAccept:tca|coinAccept:ca|currState.d0ch0 ;
-; topCoinAccept:tca|register:r1|Q[0..3]                                      ; Stuck at GND due to stuck port data_in                      ;
-; topCoinAccept:tca|coinAccept:ca|currState.d0ch0                            ; Lost fanout                                                 ;
-; Total Number of Removed Registers = 82                                     ;                                                             ;
-+----------------------------------------------------------------------------+-------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                  ;
++----------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                              ; Reason for Removal                     ;
++----------------------------------------------------------------------------+----------------------------------------+
+; GradeGuessTop:ggt|register:rn|Q[0..3]                                      ; Stuck at GND due to stuck port data_in ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|Znarly[0..3]                             ; Stuck at GND due to stuck port data_in ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|GameWon                                  ; Stuck at GND due to stuck port data_in ;
+; GradeGuessTop:ggt|GradeZood:gz0|currentState.check3                        ; Lost fanout                            ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState~4                        ; Lost fanout                            ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState~5                        ; Lost fanout                            ;
+; GradeGuessTop:ggt|GradeZood:gz0|currentState~4                             ; Lost fanout                            ;
+; GradeGuessTop:ggt|GradeZood:gz0|currentState~5                             ; Lost fanout                            ;
+; GradeGuessTop:ggt|GradeZood:gz0|currentState~6                             ; Lost fanout                            ;
+; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState~4       ; Lost fanout                            ;
+; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState~5       ; Lost fanout                            ;
+; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState~6       ; Lost fanout                            ;
+; topCoinAccept:tca|coinAccept:ca|currState~4                                ; Lost fanout                            ;
+; topCoinAccept:tca|coinAccept:ca|currState~5                                ; Lost fanout                            ;
+; topCoinAccept:tca|coinAccept:ca|currState~6                                ; Lost fanout                            ;
+; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState.waiting ; Stuck at GND due to stuck port clock   ;
+; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState.done    ; Lost fanout                            ;
+; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState.check3  ; Lost fanout                            ;
+; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState.check2  ; Lost fanout                            ;
+; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState.check1  ; Lost fanout                            ;
+; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState.check0  ; Lost fanout                            ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|seenOutZnarly[0..3]                      ; Lost fanout                            ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g1|Q[0..2]                         ; Lost fanout                            ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g0|Q[0..2]                         ; Lost fanout                            ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g2|Q[0..2]                         ; Lost fanout                            ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g3|Q[0..2]                         ; Lost fanout                            ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.doneS                    ; Lost fanout                            ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.waitingS                 ; Lost fanout                            ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.loadGuessS               ; Lost fanout                            ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZnarlyS             ; Lost fanout                            ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZoodS               ; Lost fanout                            ;
+; GradeGuessTop:ggt|GradeZood:gz0|currentState.waiting                       ; Lost fanout                            ;
+; GradeGuessTop:ggt|GradeZood:gz0|currentState.check1                        ; Lost fanout                            ;
+; GradeGuessTop:ggt|GradeZood:gz0|currentState.check2                        ; Lost fanout                            ;
+; GradeGuessTop:ggt|GradeZood:gz0|currentState.check0                        ; Lost fanout                            ;
+; GradeGuessTop:ggt|GradeZood:gz0|currentState.done                          ; Lost fanout                            ;
+; Total Number of Removed Registers = 53                                     ;                                        ;
++----------------------------------------------------------------------------+----------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -381,46 +378,38 @@ Encoding Type:  One-Hot
 +----------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------+
 ; Register name                                                        ; Reason for Removal        ; Registers Removed due to This Register                                     ;
 +----------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------+
-; GradeGuessTop:ggt|register:rn|Q[0]                                   ; Stuck at GND              ; GradeGuessTop:ggt|GradeZnarly:gzn|Znarly[3],                               ;
-;                                                                      ; due to stuck port data_in ; GradeGuessTop:ggt|GradeZnarly:gzn|Znarly[0],                               ;
-;                                                                      ;                           ; GradeGuessTop:ggt|loadGuess:lg|register:g3|Q[0],                           ;
-;                                                                      ;                           ; GradeGuessTop:ggt|loadGuess:lg|register:g3|Q[1],                           ;
-;                                                                      ;                           ; GradeGuessTop:ggt|loadGuess:lg|register:g3|Q[2],                           ;
+; GradeGuessTop:ggt|GradeZood:gz0|currentState.check3                  ; Lost Fanouts              ; GradeGuessTop:ggt|GradeZnarly:gzn|seenOutZnarly[2],                        ;
+;                                                                      ;                           ; GradeGuessTop:ggt|GradeZnarly:gzn|seenOutZnarly[3],                        ;
 ;                                                                      ;                           ; GradeGuessTop:ggt|loadGuess:lg|register:g2|Q[0],                           ;
 ;                                                                      ;                           ; GradeGuessTop:ggt|loadGuess:lg|register:g2|Q[1],                           ;
 ;                                                                      ;                           ; GradeGuessTop:ggt|loadGuess:lg|register:g2|Q[2],                           ;
+;                                                                      ;                           ; GradeGuessTop:ggt|loadGuess:lg|register:g3|Q[0],                           ;
+;                                                                      ;                           ; GradeGuessTop:ggt|loadGuess:lg|register:g3|Q[1],                           ;
+;                                                                      ;                           ; GradeGuessTop:ggt|loadGuess:lg|register:g3|Q[2],                           ;
+;                                                                      ;                           ; GradeGuessTop:ggt|GradeZood:gz0|currentState.check1,                       ;
+;                                                                      ;                           ; GradeGuessTop:ggt|GradeZood:gz0|currentState.check2                        ;
+; GradeGuessTop:ggt|GradeZood:gz0|currentState~4                       ; Lost Fanouts              ; GradeGuessTop:ggt|GradeZnarly:gzn|seenOutZnarly[1],                        ;
+;                                                                      ;                           ; GradeGuessTop:ggt|GradeZnarly:gzn|seenOutZnarly[0],                        ;
 ;                                                                      ;                           ; GradeGuessTop:ggt|loadGuess:lg|register:g1|Q[0],                           ;
 ;                                                                      ;                           ; GradeGuessTop:ggt|loadGuess:lg|register:g1|Q[1],                           ;
 ;                                                                      ;                           ; GradeGuessTop:ggt|loadGuess:lg|register:g1|Q[2],                           ;
 ;                                                                      ;                           ; GradeGuessTop:ggt|loadGuess:lg|register:g0|Q[0],                           ;
 ;                                                                      ;                           ; GradeGuessTop:ggt|loadGuess:lg|register:g0|Q[1],                           ;
 ;                                                                      ;                           ; GradeGuessTop:ggt|loadGuess:lg|register:g0|Q[2],                           ;
-;                                                                      ;                           ; topCoinAccept:tca|register:r1|Q[0], topCoinAccept:tca|register:r1|Q[1],    ;
-;                                                                      ;                           ; topCoinAccept:tca|register:r1|Q[2], topCoinAccept:tca|register:r1|Q[3]     ;
-; loadMaster:lms|LoadShapeIn[2]                                        ; Stuck at GND              ; loadMaster:lms|register:m3|Q[0], loadMaster:lms|register:m2|Q[0],          ;
-;                                                                      ; due to stuck port data_in ; loadMaster:lms|register:m1|Q[0], loadMaster:lms|register:m0|Q[0],          ;
-;                                                                      ;                           ; GradeGuessTop:ggt|GradeZnarly:gzn|Znarly[1],                               ;
-;                                                                      ;                           ; GradeGuessTop:ggt|GradeZnarly:gzn|Znarly[2],                               ;
-;                                                                      ;                           ; GradeGuessTop:ggt|GradeZnarly:gzn|GameWon,                                 ;
-;                                                                      ;                           ; GradeGuessTop:ggt|GradeZnarly:gzn|seenOutZnarly[0],                        ;
-;                                                                      ;                           ; GradeGuessTop:ggt|GradeZnarly:gzn|seenOutZnarly[1],                        ;
-;                                                                      ;                           ; GradeGuessTop:ggt|GradeZnarly:gzn|seenOutZnarly[2],                        ;
-;                                                                      ;                           ; GradeGuessTop:ggt|GradeZnarly:gzn|seenOutZnarly[3]                         ;
-; GradeGuessTop:ggt|GradeZood:gz0|currentState~4                       ; Lost Fanouts              ; GradeGuessTop:ggt|GradeZood:gz0|currentState.check0,                       ;
-;                                                                      ;                           ; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.doneS,                   ;
-;                                                                      ;                           ; GradeGuessTop:ggt|GradeZood:gz0|currentState.waiting                       ;
+;                                                                      ;                           ; GradeGuessTop:ggt|GradeZood:gz0|currentState.waiting,                      ;
+;                                                                      ;                           ; GradeGuessTop:ggt|GradeZood:gz0|currentState.check0                        ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState~4                  ; Lost Fanouts              ; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.waitingS,                ;
+;                                                                      ;                           ; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZnarlyS,            ;
+;                                                                      ;                           ; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZoodS,              ;
+;                                                                      ;                           ; GradeGuessTop:ggt|GradeZood:gz0|currentState.done                          ;
 ; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState~4 ; Lost Fanouts              ; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState.check3, ;
 ;                                                                      ;                           ; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState.check2, ;
 ;                                                                      ;                           ; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState.check0  ;
-; topCoinAccept:tca|coinAccept:ca|currState~4                          ; Lost Fanouts              ; topCoinAccept:tca|coinAccept:ca|currState.d1ch1,                           ;
-;                                                                      ;                           ; topCoinAccept:tca|coinAccept:ca|currState.d1ch3                            ;
-; GradeGuessTop:ggt|GradeZood:gz0|currentState.check3                  ; Lost Fanouts              ; GradeGuessTop:ggt|GradeZood:gz0|currentState.check2                        ;
-; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState~4                  ; Lost Fanouts              ; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZoodS               ;
-; GradeGuessTop:ggt|GradeZood:gz0|currentState~5                       ; Lost Fanouts              ; GradeGuessTop:ggt|GradeZood:gz0|currentState.check1                        ;
+; GradeGuessTop:ggt|register:rn|Q[0]                                   ; Stuck at GND              ; GradeGuessTop:ggt|GradeZnarly:gzn|Znarly[3],                               ;
+;                                                                      ; due to stuck port data_in ; GradeGuessTop:ggt|GradeZnarly:gzn|Znarly[0]                                ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState~5                  ; Lost Fanouts              ; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.loadGuessS               ;
 ; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState~5 ; Lost Fanouts              ; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState.check1  ;
 ; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState~6 ; Lost Fanouts              ; GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState.done    ;
-; topCoinAccept:tca|coinAccept:ca|currState~5                          ; Lost Fanouts              ; topCoinAccept:tca|coinAccept:ca|currState.d1ch2                            ;
-; topCoinAccept:tca|coinAccept:ca|currState~6                          ; Lost Fanouts              ; topCoinAccept:tca|coinAccept:ca|currState.d1ch0                            ;
 +----------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------+
 
 
@@ -429,23 +418,28 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 27    ;
+; Number of registers using Synchronous Clear  ; 4     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 8     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 7     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |chipInterface|topCoinAccept:tca|register:r1|Q[0] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |chipInterface|GradeGuessTop:ggt|loadGuess:lg|register:g3|Q[2] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |chipInterface|loadMaster:lms|register:m0|Q[2]                 ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |chipInterface|loadMaster:lms|register:m1|Q[1]                 ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |chipInterface|loadMaster:lms|register:m2|Q[1]                 ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |chipInterface|loadMaster:lms|register:m3|Q[0]                 ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |chipInterface|topCoinAccept:tca|register:r1|Q[1]              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------+
@@ -737,6 +731,42 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "loadMaster:lms|BCDtoSevenSegment:h4"                                                                                                       ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; bcd  ; Input ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "bcd[3..3]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "loadMaster:lms|BCDtoSevenSegment:h3"                                                                                                       ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; bcd  ; Input ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "bcd[3..3]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "loadMaster:lms|BCDtoSevenSegment:h2"                                                                                                       ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; bcd  ; Input ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "bcd[3..3]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "loadMaster:lms|BCDtoSevenSegment:h1"                                                                                                       ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; bcd  ; Input ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "bcd[3..3]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "topCoinAccept:tca|comparator:c1"                                                                                                                                                      ;
 +---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -766,7 +796,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -776,7 +806,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.1 Build 177 11/07/2012 SJ Full Version
-    Info: Processing started: Wed Mar 26 20:37:22 2014
+    Info: Processing started: Thu Mar 27 12:42:31 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab3B -c mastermindVGA
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 9 design units, including 9 entities, in source file mastermindVGA.sv
@@ -806,7 +836,7 @@ Info (12021): Found 12 design units, including 12 entities, in source file hw7pr
     Info (12023): Found entity 10: decoder_test
     Info (12023): Found entity 11: register
     Info (12023): Found entity 12: register_test
-Warning (10275): Verilog HDL Module Instantiation warning at coinaccepting.sv(15): ignored dangling comma in List of Port Connections
+Warning (10275): Verilog HDL Module Instantiation warning at coinaccepting.sv(14): ignored dangling comma in List of Port Connections
 Info (12021): Found 2 design units, including 2 entities, in source file coinaccepting.sv
     Info (12023): Found entity 1: topCoinAccept
     Info (12023): Found entity 2: coinAccept
@@ -823,8 +853,7 @@ Info (12021): Found 6 design units, including 6 entities, in source file gradegu
 Critical Warning (10846): Verilog HDL Instantiation warning at gradeguess.sv(86): instance has no name
 Info (12127): Elaborating entity "chipInterface" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at lab3b.sv(15): object "debug" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at lab3b.sv(22): object "gamePlaying" assigned a value but never read
-Warning (10034): Output port "LEDG[7..3]" at lab3b.sv(8) has no driver
+Warning (10034): Output port "LEDG[7..5]" at lab3b.sv(8) has no driver
 Warning (10034): Output port "VGA_R" at lab3b.sv(9) has no driver
 Warning (10034): Output port "VGA_G" at lab3b.sv(9) has no driver
 Warning (10034): Output port "VGA_B" at lab3b.sv(9) has no driver
@@ -835,15 +864,13 @@ Warning (10034): Output port "VGA_VS" at lab3b.sv(11) has no driver
 Warning (10034): Output port "VGA_HS" at lab3b.sv(12) has no driver
 Info (12128): Elaborating entity "BCDtoSevenSegment" for hierarchy "BCDtoSevenSegment:zn"
 Info (12128): Elaborating entity "topCoinAccept" for hierarchy "topCoinAccept:tca"
-Warning (10230): Verilog HDL assignment warning at coinaccepting.sv(12): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at coinaccepting.sv(11): truncated value with size 32 to match size of target (1)
 Info (12128): Elaborating entity "coinAccept" for hierarchy "topCoinAccept:tca|coinAccept:ca"
-Warning (10036): Verilog HDL or VHDL warning at coinaccepting.sv(34): object "credit" assigned a value but never read
-Critical Warning (10237): Verilog HDL warning at coinaccepting.sv(88): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
+Warning (10036): Verilog HDL or VHDL warning at coinaccepting.sv(33): object "credit" assigned a value but never read
 Info (12128): Elaborating entity "adder" for hierarchy "topCoinAccept:tca|adder:a1"
 Info (12128): Elaborating entity "register" for hierarchy "topCoinAccept:tca|register:r1"
 Info (12128): Elaborating entity "comparator" for hierarchy "topCoinAccept:tca|comparator:c1"
 Info (12128): Elaborating entity "loadMaster" for hierarchy "loadMaster:lms"
-Critical Warning (10237): Verilog HDL warning at loadingmaster.sv(36): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
 Info (12128): Elaborating entity "register" for hierarchy "loadMaster:lms|register:m0"
 Info (12128): Elaborating entity "decoder" for hierarchy "loadMaster:lms|decoder:d1"
 Info (12128): Elaborating entity "GradeGuessTop" for hierarchy "GradeGuessTop:ggt"
@@ -859,15 +886,8 @@ Warning (10230): Verilog HDL assignment warning at gradeguess.sv(201): truncated
 Warning (10230): Verilog HDL assignment warning at gradeguess.sv(206): truncated value with size 32 to match size of target (1)
 Info (12128): Elaborating entity "guessControlFsm" for hierarchy "GradeGuessTop:ggt|guessControlFsm:gcfsm"
 Info (12128): Elaborating entity "loadGuess" for hierarchy "GradeGuessTop:ggt|loadGuess:lg"
-Warning (12241): 10 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 14 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[0]" is stuck at GND
-    Warning (13410): Pin "HEX0[1]" is stuck at GND
-    Warning (13410): Pin "HEX0[2]" is stuck at GND
-    Warning (13410): Pin "HEX0[3]" is stuck at GND
-    Warning (13410): Pin "HEX0[4]" is stuck at GND
-    Warning (13410): Pin "HEX0[5]" is stuck at GND
-    Warning (13410): Pin "HEX0[6]" is stuck at VCC
     Warning (13410): Pin "HEX1[0]" is stuck at GND
     Warning (13410): Pin "HEX1[1]" is stuck at GND
     Warning (13410): Pin "HEX1[2]" is stuck at GND
@@ -891,9 +911,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX3[6]" is stuck at VCC
     Warning (13410): Pin "LEDG[0]" is stuck at GND
     Warning (13410): Pin "LEDG[1]" is stuck at GND
-    Warning (13410): Pin "LEDG[2]" is stuck at GND
     Warning (13410): Pin "LEDG[3]" is stuck at GND
-    Warning (13410): Pin "LEDG[4]" is stuck at GND
     Warning (13410): Pin "LEDG[5]" is stuck at GND
     Warning (13410): Pin "LEDG[6]" is stuck at GND
     Warning (13410): Pin "LEDG[7]" is stuck at GND
@@ -926,15 +944,15 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "VGA_SYNC_N" is stuck at GND
     Warning (13410): Pin "VGA_VS" is stuck at GND
     Warning (13410): Pin "VGA_HS" is stuck at GND
-Info (17049): 30 registers lost all their fanouts during netlist optimizations.
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 43 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 23 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[0]"
-    Warning (15610): No output dependent on input pin "SW[1]"
-    Warning (15610): No output dependent on input pin "SW[2]"
-    Warning (15610): No output dependent on input pin "SW[3]"
-    Warning (15610): No output dependent on input pin "SW[4]"
+Warning (21074): Design contains 11 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[12]"
+    Warning (15610): No output dependent on input pin "SW[13]"
+    Warning (15610): No output dependent on input pin "SW[14]"
+    Warning (15610): No output dependent on input pin "SW[15]"
     Warning (15610): No output dependent on input pin "SW[5]"
     Warning (15610): No output dependent on input pin "SW[6]"
     Warning (15610): No output dependent on input pin "SW[7]"
@@ -942,24 +960,14 @@ Warning (21074): Design contains 23 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[9]"
     Warning (15610): No output dependent on input pin "SW[10]"
     Warning (15610): No output dependent on input pin "SW[11]"
-    Warning (15610): No output dependent on input pin "SW[12]"
-    Warning (15610): No output dependent on input pin "SW[13]"
-    Warning (15610): No output dependent on input pin "SW[14]"
-    Warning (15610): No output dependent on input pin "SW[15]"
-    Warning (15610): No output dependent on input pin "SW[16]"
-    Warning (15610): No output dependent on input pin "SW[17]"
-    Warning (15610): No output dependent on input pin "KEY[1]"
-    Warning (15610): No output dependent on input pin "KEY[2]"
-    Warning (15610): No output dependent on input pin "KEY[3]"
-    Warning (15610): No output dependent on input pin "CLOCK_50"
-    Warning (15610): No output dependent on input pin "KEY[0]"
-Info (21057): Implemented 88 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 204 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
-    Info (21059): Implemented 65 output pins
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 117 warnings
-    Info: Peak virtual memory: 326 megabytes
-    Info: Processing ended: Wed Mar 26 20:37:24 2014
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info (21059): Implemented 93 output pins
+    Info (21061): Implemented 88 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 93 warnings
+    Info: Peak virtual memory: 341 megabytes
+    Info: Processing ended: Thu Mar 27 12:42:34 2014
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 

@@ -1,39 +1,30 @@
 module loadMaster(
 	input logic [2:0] LoadShape,
 	input logic [1:0] ShapeLocation,
-	input logic LoadShapeNow, reset, CLOCK_50,
-	input logic [3:0] RoundNumber,
+	input logic LoadShapeNow, reset, CLOCK_50, gamePlaying,
 	output logic [2:0] master0, master1, master2, master3,
-	output logic masterLoaded
+	output logic masterLoaded,
+	output logic [6:0] HEX7, HEX6, HEX5, HEX4
 	);
 	
-	logic [1:0] ShapeLocationIn;
-	logic [2:0] LoadShapeIn;
-	logic [3:0] decoderOutput;
-	logic load0, load1, load2, load3;
-	assign load0 = decoderOutput[0]&(master0 == 0);
-	assign load1 = decoderOutput[1]&(master1 == 0);
-	assign load2 = decoderOutput[2]&(master2 == 0);
-	assign load3 = decoderOutput[3]&(master3 == 0);
-	assign masterLoaded = (master0 != 0) & (master1 != 0) & (master2 != 0) & (master3 != 0);
+	BCDtoSevenSegment h1(HEX7, master3);
+	BCDtoSevenSegment h2(HEX6, master2);
+	BCDtoSevenSegment h3(HEX5, master1);
+	BCDtoSevenSegment h4(HEX4, master0);
 	
-	register #(3) m0(LoadShapeIn, load0, reset, CLOCK_50, master0);
-	register #(3) m1(LoadShapeIn, load1, reset, CLOCK_50, master1);
-	register #(3) m2(LoadShapeIn, load2, reset, CLOCK_50, master2);
-	register #(3) m3(LoadShapeIn, load3, reset, CLOCK_50, master3);
-	decoder  #(4) d1(ShapeLocationIn, 1, decoderOutput);
+	logic [3:0] decOut;
+	logic load0, load1, load2, load3, timeToLoad;
+	assign timeToLoad = LoadShapeNow & ~gamePlaying;
+	assign load0 = timeToLoad&decOut[0]&(master0 == 3'd0);
+	assign load1 = timeToLoad&decOut[1]&(master1 == 3'd0);
+	assign load2 = timeToLoad&decOut[2]&(master2 == 3'd0);
+	assign load3 = timeToLoad&decOut[3]&(master3 == 3'd0);
+	assign masterLoaded = (master0 != 3'd0) & (master1 != 3'd0) & (master2 != 3'd0) & (master3 != 3'd0);
 	
-	logic prevLSN;
-	always @(posedge CLOCK_50, posedge reset) begin
-		if (reset) begin
-			LoadShapeIn <= 0;
-			ShapeLocationIn <= 0;
-		end
-		else if (LoadShapeNow & ~prevLSN & (RoundNumber == 0)) begin
-			LoadShapeIn <= LoadShape;
-			ShapeLocationIn <= ShapeLocation;
-		end
-		prevLSN <= LoadShapeNow;
-	end
+	register #(3) m0(LoadShape, load0, reset, CLOCK_50, master0);
+	register #(3) m1(LoadShape, load1, reset, CLOCK_50, master1);
+	register #(3) m2(LoadShape, load2, reset, CLOCK_50, master2);
+	register #(3) m3(LoadShape, load3, reset, CLOCK_50, master3);
+	decoder  #(4) d1(ShapeLocation, 1, decOut);
 	
 endmodule: loadMaster

@@ -1,7 +1,9 @@
+`default_nettype none
+
 module loadMaster(
 	input logic [2:0] LoadShape,
 	input logic [1:0] ShapeLocation,
-	input logic LoadShapeNow, reset, CLOCK_50, gamePlaying,
+	input logic LoadShapeNow, reset, CLOCK_50, gamePlaying, resetMaster,
 	output logic [2:0] master0, master1, master2, master3,
 	output logic masterLoaded,
 	output logic [6:0] HEX7, HEX6, HEX5, HEX4
@@ -13,7 +15,8 @@ module loadMaster(
 	BCDtoSevenSegment h4(HEX4, master0);
 	
 	logic [3:0] decOut;
-	logic load0, load1, load2, load3, timeToLoad;
+	logic load0, load1, load2, load3, timeToLoad, resetM;
+	assign resetM = reset | resetMaster;
 	assign timeToLoad = LoadShapeNow & ~gamePlaying;
 	assign load0 = timeToLoad&decOut[0]&(master0 == 3'd0);
 	assign load1 = timeToLoad&decOut[1]&(master1 == 3'd0);
@@ -21,10 +24,10 @@ module loadMaster(
 	assign load3 = timeToLoad&decOut[3]&(master3 == 3'd0);
 	assign masterLoaded = (master0 != 3'd0) & (master1 != 3'd0) & (master2 != 3'd0) & (master3 != 3'd0);
 	
-	register #(3) m0(LoadShape, load0, reset, CLOCK_50, master0);
-	register #(3) m1(LoadShape, load1, reset, CLOCK_50, master1);
-	register #(3) m2(LoadShape, load2, reset, CLOCK_50, master2);
-	register #(3) m3(LoadShape, load3, reset, CLOCK_50, master3);
+	register #(3) m0(LoadShape, load0, resetM, CLOCK_50, master0);
+	register #(3) m1(LoadShape, load1, resetM, CLOCK_50, master1);
+	register #(3) m2(LoadShape, load2, resetM, CLOCK_50, master2);
+	register #(3) m3(LoadShape, load3, resetM, CLOCK_50, master3);
 	decoder  #(4) d1(ShapeLocation, 1, decOut);
 	
 endmodule: loadMaster

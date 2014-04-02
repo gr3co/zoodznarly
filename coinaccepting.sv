@@ -1,18 +1,21 @@
+`default_nettype none
+
 module topCoinAccept(
 	input logic [1:0] CoinValue,
-	input logic CoinInserted, reset, CLOCK_50, StartGame, masterLoaded, gamePlaying,
+	input logic CoinInserted, reset, CLOCK_50, startGameNow, masterLoaded, gamePlaying,
 	output logic ready,
 	output logic [3:0] NumGames);
 	
-	logic drop, gt, adderIn;
+	logic drop, gt, adderIn, en_reg;
 	logic [3:0] numGamesIn;
 	
+	assign en_reg = startGameNow | drop;
 	assign ready = gt&masterLoaded&(~gamePlaying); //ready to play
-	assign adderIn = (drop&(NumGames < 7)) ? 1 : (StartGame&ready) ? 4'hf : 0;
+	assign adderIn = (startGameNow) ? 4'b1111 : (drop&(NumGames < 7)) ? 1 : 0;
 	
 	coinAccept ca(.*);
 	adder #(4) a1(adderIn, NumGames, 0, numGamesIn,);
-	register #(4) r1(numGamesIn, drop, reset, CLOCK_50, NumGames);
+	register #(4) r1(numGamesIn, en_reg, reset, CLOCK_50, NumGames);
 	comparator #(4) c1(, , gt, NumGames, 0);
 	
 endmodule: topCoinAccept

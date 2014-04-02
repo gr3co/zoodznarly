@@ -132,7 +132,7 @@ module mastermindVGA (
     registerAZ #(4) numGamesReg (
             .Q      (memNumGames),
             .D      (numGames),
-            .clr    (clearGame),
+            .clr    (1'b0),
             .en     (loadNumGames),
             .*);
 

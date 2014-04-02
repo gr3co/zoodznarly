@@ -1,5 +1,5 @@
 Fitter report for mastermindVGA
-Thu Mar 27 12:42:50 2014
+Wed Apr  2 11:52:38 2014
 Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Full Version
 
 
@@ -40,8 +40,10 @@ Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Full Version
  32. I/O Rules Matrix
  33. Fitter Device Options
  34. Operating Settings and Conditions
- 35. Fitter Messages
- 36. Fitter Suppressed Messages
+ 35. Estimated Delay Added for Hold Timing Summary
+ 36. Estimated Delay Added for Hold Timing Details
+ 37. Fitter Messages
+ 38. Fitter Suppressed Messages
 
 
 
@@ -67,17 +69,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Fitter Summary                                                                 ;
 +------------------------------------+-------------------------------------------+
-; Fitter Status                      ; Successful - Thu Mar 27 12:42:50 2014     ;
+; Fitter Status                      ; Successful - Wed Apr  2 11:52:38 2014     ;
 ; Quartus II 32-bit Version          ; 12.1 Build 177 11/07/2012 SJ Full Version ;
 ; Revision Name                      ; mastermindVGA                             ;
 ; Top-level Entity Name              ; chipInterface                             ;
 ; Family                             ; Cyclone IV E                              ;
 ; Device                             ; EP4CE115F29C7                             ;
 ; Timing Models                      ; Final                                     ;
-; Total logic elements               ; 88 / 114,480 ( < 1 % )                    ;
-;     Total combinational functions  ; 87 / 114,480 ( < 1 % )                    ;
-;     Dedicated logic registers      ; 27 / 114,480 ( < 1 % )                    ;
-; Total registers                    ; 27                                        ;
+; Total logic elements               ; 164 / 114,480 ( < 1 % )                   ;
+;     Total combinational functions  ; 159 / 114,480 ( < 1 % )                   ;
+;     Dedicated logic registers      ; 70 / 114,480 ( < 1 % )                    ;
+; Total registers                    ; 70                                        ;
 ; Total pins                         ; 116 / 529 ( 22 % )                        ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                     ;
@@ -153,12 +155,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 2.50        ;
+; Average used               ; 2.57        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     1 processor            ; 100.0%      ;
-;     2-4 processors         ;  20.0%      ;
+;     2-4 processors         ;  21.4%      ;
 ;     5-8 processors         ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -687,8 +689,8 @@ applicable agreement for further details.
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 358 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 358 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 474 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 474 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -711,7 +713,7 @@ applicable agreement for further details.
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 348     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 464     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 10      ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -722,125 +724,125 @@ applicable agreement for further details.
 The pin-out file can be found in /afs/ece.cmu.edu/usr/gya/Private/240/lab3b/output_files/mastermindVGA.pin.
 
 
-+----------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                        ;
-+---------------------------------------------+------------------------+
-; Resource                                    ; Usage                  ;
-+---------------------------------------------+------------------------+
-; Total logic elements                        ; 88 / 114,480 ( < 1 % ) ;
-;     -- Combinational with no register       ; 61                     ;
-;     -- Register only                        ; 1                      ;
-;     -- Combinational with a register        ; 26                     ;
-;                                             ;                        ;
-; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 36                     ;
-;     -- 3 input functions                    ; 39                     ;
-;     -- <=2 input functions                  ; 12                     ;
-;     -- Register only                        ; 1                      ;
-;                                             ;                        ;
-; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 84                     ;
-;     -- arithmetic mode                      ; 3                      ;
-;                                             ;                        ;
-; Total registers*                            ; 27 / 117,053 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 27 / 114,480 ( < 1 % ) ;
-;     -- I/O registers                        ; 0 / 2,573 ( 0 % )      ;
-;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 10 / 7,155 ( < 1 % )   ;
-; Virtual pins                                ; 0                      ;
-; I/O pins                                    ; 116 / 529 ( 22 % )     ;
-;     -- Clock pins                           ; 1 / 7 ( 14 % )         ;
-;     -- Dedicated input pins                 ; 0 / 9 ( 0 % )          ;
-;                                             ;                        ;
-; Global signals                              ; 1                      ;
-; M9Ks                                        ; 0 / 432 ( 0 % )        ;
-; Total block memory bits                     ; 0 / 3,981,312 ( 0 % )  ;
-; Total block memory implementation bits      ; 0 / 3,981,312 ( 0 % )  ;
-; Embedded Multiplier 9-bit elements          ; 0 / 532 ( 0 % )        ;
-; PLLs                                        ; 0 / 4 ( 0 % )          ;
-; Global clocks                               ; 1 / 20 ( 5 % )         ;
-; JTAGs                                       ; 0 / 1 ( 0 % )          ;
-; CRC blocks                                  ; 0 / 1 ( 0 % )          ;
-; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
-; Impedance control blocks                    ; 0 / 4 ( 0 % )          ;
-; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%           ;
-; Peak interconnect usage (total/H/V)         ; 1% / 0% / 1%           ;
-; Maximum fan-out                             ; 27                     ;
-; Highest non-global fan-out                  ; 24                     ;
-; Total fan-out                               ; 516                    ;
-; Average fan-out                             ; 1.44                   ;
-+---------------------------------------------+------------------------+
++-----------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                         ;
++---------------------------------------------+-------------------------+
+; Resource                                    ; Usage                   ;
++---------------------------------------------+-------------------------+
+; Total logic elements                        ; 164 / 114,480 ( < 1 % ) ;
+;     -- Combinational with no register       ; 94                      ;
+;     -- Register only                        ; 5                       ;
+;     -- Combinational with a register        ; 65                      ;
+;                                             ;                         ;
+; Logic element usage by number of LUT inputs ;                         ;
+;     -- 4 input functions                    ; 53                      ;
+;     -- 3 input functions                    ; 71                      ;
+;     -- <=2 input functions                  ; 35                      ;
+;     -- Register only                        ; 5                       ;
+;                                             ;                         ;
+; Logic elements by mode                      ;                         ;
+;     -- normal mode                          ; 153                     ;
+;     -- arithmetic mode                      ; 6                       ;
+;                                             ;                         ;
+; Total registers*                            ; 70 / 117,053 ( < 1 % )  ;
+;     -- Dedicated logic registers            ; 70 / 114,480 ( < 1 % )  ;
+;     -- I/O registers                        ; 0 / 2,573 ( 0 % )       ;
+;                                             ;                         ;
+; Total LABs:  partially or completely used   ; 17 / 7,155 ( < 1 % )    ;
+; Virtual pins                                ; 0                       ;
+; I/O pins                                    ; 116 / 529 ( 22 % )      ;
+;     -- Clock pins                           ; 1 / 7 ( 14 % )          ;
+;     -- Dedicated input pins                 ; 0 / 9 ( 0 % )           ;
+;                                             ;                         ;
+; Global signals                              ; 2                       ;
+; M9Ks                                        ; 0 / 432 ( 0 % )         ;
+; Total block memory bits                     ; 0 / 3,981,312 ( 0 % )   ;
+; Total block memory implementation bits      ; 0 / 3,981,312 ( 0 % )   ;
+; Embedded Multiplier 9-bit elements          ; 0 / 532 ( 0 % )         ;
+; PLLs                                        ; 0 / 4 ( 0 % )           ;
+; Global clocks                               ; 2 / 20 ( 10 % )         ;
+; JTAGs                                       ; 0 / 1 ( 0 % )           ;
+; CRC blocks                                  ; 0 / 1 ( 0 % )           ;
+; ASMI blocks                                 ; 0 / 1 ( 0 % )           ;
+; Impedance control blocks                    ; 0 / 4 ( 0 % )           ;
+; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%            ;
+; Peak interconnect usage (total/H/V)         ; 2% / 1% / 3%            ;
+; Maximum fan-out                             ; 62                      ;
+; Highest non-global fan-out                  ; 34                      ;
+; Total fan-out                               ; 878                     ;
+; Average fan-out                             ; 1.84                    ;
++---------------------------------------------+-------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
 
 
-+------------------------------------------------------------------------------------------------------+
-; Fitter Partition Statistics                                                                          ;
-+---------------------------------------------+-----------------------+--------------------------------+
-; Statistic                                   ; Top                   ; hard_block:auto_generated_inst ;
-+---------------------------------------------+-----------------------+--------------------------------+
-; Difficulty Clustering Region                ; Low                   ; Low                            ;
-;                                             ;                       ;                                ;
-; Total logic elements                        ; 88 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
-;     -- Combinational with no register       ; 61                    ; 0                              ;
-;     -- Register only                        ; 1                     ; 0                              ;
-;     -- Combinational with a register        ; 26                    ; 0                              ;
-;                                             ;                       ;                                ;
-; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 36                    ; 0                              ;
-;     -- 3 input functions                    ; 39                    ; 0                              ;
-;     -- <=2 input functions                  ; 12                    ; 0                              ;
-;     -- Register only                        ; 1                     ; 0                              ;
-;                                             ;                       ;                                ;
-; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 84                    ; 0                              ;
-;     -- arithmetic mode                      ; 3                     ; 0                              ;
-;                                             ;                       ;                                ;
-; Total registers                             ; 27                    ; 0                              ;
-;     -- Dedicated logic registers            ; 27 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
-;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 10 / 7155 ( < 1 % )   ; 0 / 7155 ( 0 % )               ;
-;                                             ;                       ;                                ;
-; Virtual pins                                ; 0                     ; 0                              ;
-; I/O pins                                    ; 116                   ; 0                              ;
-; Embedded Multiplier 9-bit elements          ; 0 / 532 ( 0 % )       ; 0 / 532 ( 0 % )                ;
-; Total memory bits                           ; 0                     ; 0                              ;
-; Total RAM block bits                        ; 0                     ; 0                              ;
-; Clock control block                         ; 1 / 24 ( 4 % )        ; 0 / 24 ( 0 % )                 ;
-;                                             ;                       ;                                ;
-; Connections                                 ;                       ;                                ;
-;     -- Input Connections                    ; 0                     ; 0                              ;
-;     -- Registered Input Connections         ; 0                     ; 0                              ;
-;     -- Output Connections                   ; 0                     ; 0                              ;
-;     -- Registered Output Connections        ; 0                     ; 0                              ;
-;                                             ;                       ;                                ;
-; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 511                   ; 5                              ;
-;     -- Registered Connections               ; 175                   ; 0                              ;
-;                                             ;                       ;                                ;
-; External Connections                        ;                       ;                                ;
-;     -- Top                                  ; 0                     ; 0                              ;
-;     -- hard_block:auto_generated_inst       ; 0                     ; 0                              ;
-;                                             ;                       ;                                ;
-; Partition Interface                         ;                       ;                                ;
-;     -- Input Ports                          ; 23                    ; 0                              ;
-;     -- Output Ports                         ; 93                    ; 0                              ;
-;     -- Bidir Ports                          ; 0                     ; 0                              ;
-;                                             ;                       ;                                ;
-; Registered Ports                            ;                       ;                                ;
-;     -- Registered Input Ports               ; 0                     ; 0                              ;
-;     -- Registered Output Ports              ; 0                     ; 0                              ;
-;                                             ;                       ;                                ;
-; Port Connectivity                           ;                       ;                                ;
-;     -- Input Ports driven by GND            ; 0                     ; 0                              ;
-;     -- Output Ports driven by GND           ; 0                     ; 0                              ;
-;     -- Input Ports driven by VCC            ; 0                     ; 0                              ;
-;     -- Output Ports driven by VCC           ; 0                     ; 0                              ;
-;     -- Input Ports with no Source           ; 0                     ; 0                              ;
-;     -- Output Ports with no Source          ; 0                     ; 0                              ;
-;     -- Input Ports with no Fanout           ; 0                     ; 0                              ;
-;     -- Output Ports with no Fanout          ; 0                     ; 0                              ;
-+---------------------------------------------+-----------------------+--------------------------------+
++-------------------------------------------------------------------------------------------------------+
+; Fitter Partition Statistics                                                                           ;
++---------------------------------------------+------------------------+--------------------------------+
+; Statistic                                   ; Top                    ; hard_block:auto_generated_inst ;
++---------------------------------------------+------------------------+--------------------------------+
+; Difficulty Clustering Region                ; Low                    ; Low                            ;
+;                                             ;                        ;                                ;
+; Total logic elements                        ; 164 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+;     -- Combinational with no register       ; 94                     ; 0                              ;
+;     -- Register only                        ; 5                      ; 0                              ;
+;     -- Combinational with a register        ; 65                     ; 0                              ;
+;                                             ;                        ;                                ;
+; Logic element usage by number of LUT inputs ;                        ;                                ;
+;     -- 4 input functions                    ; 53                     ; 0                              ;
+;     -- 3 input functions                    ; 71                     ; 0                              ;
+;     -- <=2 input functions                  ; 35                     ; 0                              ;
+;     -- Register only                        ; 5                      ; 0                              ;
+;                                             ;                        ;                                ;
+; Logic elements by mode                      ;                        ;                                ;
+;     -- normal mode                          ; 153                    ; 0                              ;
+;     -- arithmetic mode                      ; 6                      ; 0                              ;
+;                                             ;                        ;                                ;
+; Total registers                             ; 70                     ; 0                              ;
+;     -- Dedicated logic registers            ; 70 / 114480 ( < 1 % )  ; 0 / 114480 ( 0 % )             ;
+;                                             ;                        ;                                ;
+; Total LABs:  partially or completely used   ; 17 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
+;                                             ;                        ;                                ;
+; Virtual pins                                ; 0                      ; 0                              ;
+; I/O pins                                    ; 116                    ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0 / 532 ( 0 % )        ; 0 / 532 ( 0 % )                ;
+; Total memory bits                           ; 0                      ; 0                              ;
+; Total RAM block bits                        ; 0                      ; 0                              ;
+; Clock control block                         ; 2 / 24 ( 8 % )         ; 0 / 24 ( 0 % )                 ;
+;                                             ;                        ;                                ;
+; Connections                                 ;                        ;                                ;
+;     -- Input Connections                    ; 0                      ; 0                              ;
+;     -- Registered Input Connections         ; 0                      ; 0                              ;
+;     -- Output Connections                   ; 0                      ; 0                              ;
+;     -- Registered Output Connections        ; 0                      ; 0                              ;
+;                                             ;                        ;                                ;
+; Internal Connections                        ;                        ;                                ;
+;     -- Total Connections                    ; 873                    ; 5                              ;
+;     -- Registered Connections               ; 345                    ; 0                              ;
+;                                             ;                        ;                                ;
+; External Connections                        ;                        ;                                ;
+;     -- Top                                  ; 0                      ; 0                              ;
+;     -- hard_block:auto_generated_inst       ; 0                      ; 0                              ;
+;                                             ;                        ;                                ;
+; Partition Interface                         ;                        ;                                ;
+;     -- Input Ports                          ; 23                     ; 0                              ;
+;     -- Output Ports                         ; 93                     ; 0                              ;
+;     -- Bidir Ports                          ; 0                      ; 0                              ;
+;                                             ;                        ;                                ;
+; Registered Ports                            ;                        ;                                ;
+;     -- Registered Input Ports               ; 0                      ; 0                              ;
+;     -- Registered Output Ports              ; 0                      ; 0                              ;
+;                                             ;                        ;                                ;
+; Port Connectivity                           ;                        ;                                ;
+;     -- Input Ports driven by GND            ; 0                      ; 0                              ;
+;     -- Output Ports driven by GND           ; 0                      ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0                      ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0                      ; 0                              ;
+;     -- Input Ports with no Source           ; 0                      ; 0                              ;
+;     -- Output Ports with no Source          ; 0                      ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0                      ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0                      ; 0                              ;
++---------------------------------------------+------------------------+--------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -848,29 +850,29 @@ The pin-out file can be found in /afs/ece.cmu.edu/usr/gya/Private/240/lab3b/outp
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+
 ; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+
-; CLOCK_50 ; Y2    ; 2        ; 0            ; 36           ; 14           ; 27                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; KEY[0]   ; M23   ; 6        ; 115          ; 40           ; 7            ; 24                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; CLOCK_50 ; Y2    ; 2        ; 0            ; 36           ; 14           ; 62                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; KEY[0]   ; M23   ; 6        ; 115          ; 40           ; 7            ; 34                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 ; KEY[1]   ; M21   ; 6        ; 115          ; 53           ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 ; KEY[2]   ; N21   ; 6        ; 115          ; 42           ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; KEY[3]   ; R24   ; 5        ; 115          ; 35           ; 21           ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[0]    ; AB28  ; 5        ; 115          ; 17           ; 0            ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[10]   ; AC24  ; 5        ; 115          ; 4            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[11]   ; AB24  ; 5        ; 115          ; 5            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; KEY[3]   ; R24   ; 5        ; 115          ; 35           ; 21           ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[0]    ; AB28  ; 5        ; 115          ; 17           ; 0            ; 5                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[10]   ; AC24  ; 5        ; 115          ; 4            ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[11]   ; AB24  ; 5        ; 115          ; 5            ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 ; SW[12]   ; AB23  ; 5        ; 115          ; 7            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 ; SW[13]   ; AA24  ; 5        ; 115          ; 9            ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 ; SW[14]   ; AA23  ; 5        ; 115          ; 10           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 ; SW[15]   ; AA22  ; 5        ; 115          ; 6            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 ; SW[16]   ; Y24   ; 5        ; 115          ; 13           ; 0            ; 5                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 ; SW[17]   ; Y23   ; 5        ; 115          ; 14           ; 7            ; 5                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[1]    ; AC28  ; 5        ; 115          ; 14           ; 0            ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[2]    ; AC27  ; 5        ; 115          ; 15           ; 7            ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[3]    ; AD27  ; 5        ; 115          ; 13           ; 7            ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[4]    ; AB27  ; 5        ; 115          ; 18           ; 7            ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[5]    ; AC26  ; 5        ; 115          ; 11           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[6]    ; AD26  ; 5        ; 115          ; 10           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[7]    ; AB26  ; 5        ; 115          ; 15           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[8]    ; AC25  ; 5        ; 115          ; 4            ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[9]    ; AB25  ; 5        ; 115          ; 16           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[1]    ; AC28  ; 5        ; 115          ; 14           ; 0            ; 5                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[2]    ; AC27  ; 5        ; 115          ; 15           ; 7            ; 5                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[3]    ; AD27  ; 5        ; 115          ; 13           ; 7            ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[4]    ; AB27  ; 5        ; 115          ; 18           ; 7            ; 5                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[5]    ; AC26  ; 5        ; 115          ; 11           ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[6]    ; AD26  ; 5        ; 115          ; 10           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[7]    ; AB26  ; 5        ; 115          ; 15           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[8]    ; AC25  ; 5        ; 115          ; 4            ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[9]    ; AB25  ; 5        ; 115          ; 16           ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+
 
 
@@ -1811,26 +1813,45 @@ The pin-out file can be found in /afs/ece.cmu.edu/usr/gya/Private/240/lab3b/outp
 Note: Pin directions (input, output or bidir) are based on device operating in user mode.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                            ;
-+------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------+--------------+
-; Compilation Hierarchy Node   ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                ; Library Name ;
-+------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------+--------------+
-; |chipInterface               ; 88 (0)      ; 27 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 116  ; 0            ; 61 (0)       ; 1 (0)             ; 26 (0)           ; |chipInterface                                     ;              ;
-;    |BCDtoSevenSegment:ng|    ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |chipInterface|BCDtoSevenSegment:ng                ;              ;
-;    |loadMaster:lms|          ; 49 (9)      ; 12 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 37 (9)       ; 0 (0)             ; 12 (0)           ; |chipInterface|loadMaster:lms                      ;              ;
-;       |BCDtoSevenSegment:h1| ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |chipInterface|loadMaster:lms|BCDtoSevenSegment:h1 ;              ;
-;       |BCDtoSevenSegment:h2| ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |chipInterface|loadMaster:lms|BCDtoSevenSegment:h2 ;              ;
-;       |BCDtoSevenSegment:h3| ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |chipInterface|loadMaster:lms|BCDtoSevenSegment:h3 ;              ;
-;       |BCDtoSevenSegment:h4| ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |chipInterface|loadMaster:lms|BCDtoSevenSegment:h4 ;              ;
-;       |register:m0|          ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; |chipInterface|loadMaster:lms|register:m0          ;              ;
-;       |register:m1|          ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; |chipInterface|loadMaster:lms|register:m1          ;              ;
-;       |register:m2|          ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; |chipInterface|loadMaster:lms|register:m2          ;              ;
-;       |register:m3|          ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; |chipInterface|loadMaster:lms|register:m3          ;              ;
-;    |topCoinAccept:tca|       ; 32 (5)      ; 15 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (5)       ; 1 (0)             ; 14 (0)           ; |chipInterface|topCoinAccept:tca                   ;              ;
-;       |coinAccept:ca|        ; 22 (22)     ; 11 (11)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (11)      ; 1 (1)             ; 10 (10)          ; |chipInterface|topCoinAccept:tca|coinAccept:ca     ;              ;
-;       |register:r1|          ; 5 (5)       ; 4 (4)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 4 (4)            ; |chipInterface|topCoinAccept:tca|register:r1       ;              ;
-+------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                          ;
++-------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node    ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                             ; Library Name ;
++-------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------------------------------------+--------------+
+; |chipInterface                ; 164 (0)     ; 70 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 116  ; 0            ; 94 (0)       ; 5 (0)             ; 65 (0)           ; |chipInterface                                                  ;              ;
+;    |BCDtoSevenSegment:ng|     ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |chipInterface|BCDtoSevenSegment:ng                             ;              ;
+;    |BCDtoSevenSegment:rn|     ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |chipInterface|BCDtoSevenSegment:rn                             ;              ;
+;    |BCDtoSevenSegment:zn|     ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |chipInterface|BCDtoSevenSegment:zn                             ;              ;
+;    |BCDtoSevenSegment:zo|     ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |chipInterface|BCDtoSevenSegment:zo                             ;              ;
+;    |GradeGuessTop:ggt|        ; 52 (3)      ; 37 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 15 (3)       ; 3 (0)             ; 34 (0)           ; |chipInterface|GradeGuessTop:ggt                                ;              ;
+;       |GradeZnarly:gzn|       ; 18 (10)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 1 (1)             ; 15 (6)           ; |chipInterface|GradeGuessTop:ggt|GradeZnarly:gzn                ;              ;
+;          |comparator:gm0|     ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |chipInterface|GradeGuessTop:ggt|GradeZnarly:gzn|comparator:gm0 ;              ;
+;          |comparator:gm1|     ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |chipInterface|GradeGuessTop:ggt|GradeZnarly:gzn|comparator:gm1 ;              ;
+;          |comparator:gm2|     ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |chipInterface|GradeGuessTop:ggt|GradeZnarly:gzn|comparator:gm2 ;              ;
+;          |comparator:gm3|     ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |chipInterface|GradeGuessTop:ggt|GradeZnarly:gzn|comparator:gm3 ;              ;
+;          |comparator:gw|      ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |chipInterface|GradeGuessTop:ggt|GradeZnarly:gzn|comparator:gw  ;              ;
+;       |GradeZood:gz0|         ; 7 (7)       ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 6 (6)            ; |chipInterface|GradeGuessTop:ggt|GradeZood:gz0                  ;              ;
+;       |guessControlFsm:gcfsm| ; 9 (9)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 7 (7)            ; |chipInterface|GradeGuessTop:ggt|guessControlFsm:gcfsm          ;              ;
+;       |loadGuess:lg|          ; 22 (0)      ; 12 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (0)        ; 0 (0)             ; 14 (0)           ; |chipInterface|GradeGuessTop:ggt|loadGuess:lg                   ;              ;
+;          |register:g0|        ; 5 (5)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 4 (4)            ; |chipInterface|GradeGuessTop:ggt|loadGuess:lg|register:g0       ;              ;
+;          |register:g1|        ; 5 (5)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 4 (4)            ; |chipInterface|GradeGuessTop:ggt|loadGuess:lg|register:g1       ;              ;
+;          |register:g2|        ; 4 (4)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 3 (3)            ; |chipInterface|GradeGuessTop:ggt|loadGuess:lg|register:g2       ;              ;
+;          |register:g3|        ; 8 (8)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 3 (3)            ; |chipInterface|GradeGuessTop:ggt|loadGuess:lg|register:g3       ;              ;
+;       |register:rn|           ; 5 (5)       ; 4 (4)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 4 (4)            ; |chipInterface|GradeGuessTop:ggt|register:rn                    ;              ;
+;    |game_playing:igp|         ; 6 (6)       ; 6 (6)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 5 (5)            ; |chipInterface|game_playing:igp                                 ;              ;
+;    |loadMaster:lms|           ; 51 (11)     ; 12 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 39 (11)      ; 0 (0)             ; 12 (0)           ; |chipInterface|loadMaster:lms                                   ;              ;
+;       |BCDtoSevenSegment:h1|  ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |chipInterface|loadMaster:lms|BCDtoSevenSegment:h1              ;              ;
+;       |BCDtoSevenSegment:h2|  ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |chipInterface|loadMaster:lms|BCDtoSevenSegment:h2              ;              ;
+;       |BCDtoSevenSegment:h3|  ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |chipInterface|loadMaster:lms|BCDtoSevenSegment:h3              ;              ;
+;       |BCDtoSevenSegment:h4|  ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |chipInterface|loadMaster:lms|BCDtoSevenSegment:h4              ;              ;
+;       |register:m0|           ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; |chipInterface|loadMaster:lms|register:m0                       ;              ;
+;       |register:m1|           ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; |chipInterface|loadMaster:lms|register:m1                       ;              ;
+;       |register:m2|           ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; |chipInterface|loadMaster:lms|register:m2                       ;              ;
+;       |register:m3|           ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; |chipInterface|loadMaster:lms|register:m3                       ;              ;
+;    |topCoinAccept:tca|        ; 32 (6)      ; 15 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (6)       ; 1 (0)             ; 14 (0)           ; |chipInterface|topCoinAccept:tca                                ;              ;
+;       |coinAccept:ca|         ; 21 (21)     ; 11 (11)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (10)      ; 1 (1)             ; 10 (10)          ; |chipInterface|topCoinAccept:tca|coinAccept:ca                  ;              ;
+;       |register:r1|           ; 5 (5)       ; 4 (4)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 4 (4)            ; |chipInterface|topCoinAccept:tca|register:r1                    ;              ;
++-------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -1936,274 +1957,423 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_SYNC_N  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; VGA_VS      ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; VGA_HS      ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; SW[5]       ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; SW[6]       ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; SW[7]       ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; SW[8]       ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; SW[9]       ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; SW[10]      ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; SW[11]      ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 ; CLOCK_50    ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
-; KEY[2]      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; KEY[0]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; SW[1]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; SW[3]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; KEY[3]      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; SW[4]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; SW[1]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; SW[3]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; KEY[3]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; SW[4]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; SW[0]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; SW[2]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; SW[16]      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; SW[17]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; SW[5]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; SW[9]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; SW[10]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; SW[11]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; SW[6]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; SW[7]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; SW[8]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; KEY[2]      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; KEY[1]      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 +-------------+----------+---------------+---------------+-----------------------+-----+------+
 
 
-+-------------------------------------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                                            ;
-+-------------------------------------------------------------+-------------------+---------+
-; Source Pin / Fanout                                         ; Pad To Core Index ; Setting ;
-+-------------------------------------------------------------+-------------------+---------+
-; SW[12]                                                      ;                   ;         ;
-; SW[13]                                                      ;                   ;         ;
-; SW[14]                                                      ;                   ;         ;
-; SW[15]                                                      ;                   ;         ;
-; SW[5]                                                       ;                   ;         ;
-; SW[6]                                                       ;                   ;         ;
-; SW[7]                                                       ;                   ;         ;
-; SW[8]                                                       ;                   ;         ;
-; SW[9]                                                       ;                   ;         ;
-; SW[10]                                                      ;                   ;         ;
-; SW[11]                                                      ;                   ;         ;
-; CLOCK_50                                                    ;                   ;         ;
-; KEY[2]                                                      ;                   ;         ;
-;      - topCoinAccept:tca|adderIn~2                          ; 0                 ; 6       ;
-; KEY[0]                                                      ;                   ;         ;
-;      - topCoinAccept:tca|coinAccept:ca|currState.d0ch0      ; 1                 ; 6       ;
-;      - topCoinAccept:tca|coinAccept:ca|currState.d0ch1      ; 1                 ; 6       ;
-;      - topCoinAccept:tca|coinAccept:ca|currState.d0ch2      ; 1                 ; 6       ;
-;      - topCoinAccept:tca|coinAccept:ca|currState.d0ch3      ; 1                 ; 6       ;
-;      - topCoinAccept:tca|register:r1|Q[1]~12                ; 1                 ; 6       ;
-;      - loadMaster:lms|register:m0|Q[1]~0                    ; 1                 ; 6       ;
-;      - loadMaster:lms|register:m0|Q[0]~1                    ; 1                 ; 6       ;
-;      - loadMaster:lms|register:m0|Q[2]~2                    ; 1                 ; 6       ;
-;      - loadMaster:lms|register:m1|Q[1]~0                    ; 1                 ; 6       ;
-;      - loadMaster:lms|register:m1|Q[0]~1                    ; 1                 ; 6       ;
-;      - loadMaster:lms|register:m1|Q[2]~2                    ; 1                 ; 6       ;
-;      - loadMaster:lms|register:m2|Q[1]~0                    ; 1                 ; 6       ;
-;      - loadMaster:lms|register:m2|Q[0]~1                    ; 1                 ; 6       ;
-;      - loadMaster:lms|register:m2|Q[2]~2                    ; 1                 ; 6       ;
-;      - loadMaster:lms|register:m3|Q[1]~0                    ; 1                 ; 6       ;
-;      - loadMaster:lms|register:m3|Q[0]~1                    ; 1                 ; 6       ;
-;      - loadMaster:lms|register:m3|Q[2]~2                    ; 1                 ; 6       ;
-;      - topCoinAccept:tca|coinAccept:ca|currState.d1ch0      ; 1                 ; 6       ;
-;      - topCoinAccept:tca|coinAccept:ca|currState.d1ch1      ; 1                 ; 6       ;
-;      - topCoinAccept:tca|coinAccept:ca|goNow                ; 1                 ; 6       ;
-;      - topCoinAccept:tca|coinAccept:ca|currState.d1ch2      ; 1                 ; 6       ;
-;      - topCoinAccept:tca|coinAccept:ca|currState.d1ch3      ; 1                 ; 6       ;
-;      - topCoinAccept:tca|coinAccept:ca|prevCoinInserted     ; 1                 ; 6       ;
-;      - topCoinAccept:tca|coinAccept:ca|prevPrevCoinInserted ; 1                 ; 6       ;
-; SW[1]                                                       ;                   ;         ;
-;      - loadMaster:lms|register:m0|Q[1]~0                    ; 1                 ; 6       ;
-;      - loadMaster:lms|register:m1|Q[1]~0                    ; 1                 ; 6       ;
-;      - loadMaster:lms|register:m2|Q[1]~0                    ; 1                 ; 6       ;
-;      - loadMaster:lms|register:m3|Q[1]~0                    ; 1                 ; 6       ;
-; SW[3]                                                       ;                   ;         ;
-;      - loadMaster:lms|load0~1                               ; 1                 ; 6       ;
-;      - loadMaster:lms|load1~1                               ; 1                 ; 6       ;
-;      - loadMaster:lms|load2~1                               ; 1                 ; 6       ;
-;      - loadMaster:lms|load3~1                               ; 1                 ; 6       ;
-; KEY[3]                                                      ;                   ;         ;
-;      - loadMaster:lms|load0~1                               ; 0                 ; 6       ;
-;      - loadMaster:lms|load1~1                               ; 0                 ; 6       ;
-;      - loadMaster:lms|load2~1                               ; 0                 ; 6       ;
-;      - loadMaster:lms|load3~1                               ; 0                 ; 6       ;
-; SW[4]                                                       ;                   ;         ;
-;      - loadMaster:lms|load0~1                               ; 1                 ; 6       ;
-;      - loadMaster:lms|load1~1                               ; 1                 ; 6       ;
-;      - loadMaster:lms|load2~1                               ; 1                 ; 6       ;
-;      - loadMaster:lms|load3~1                               ; 1                 ; 6       ;
-; SW[0]                                                       ;                   ;         ;
-;      - loadMaster:lms|register:m0|Q[0]~1                    ; 0                 ; 6       ;
-;      - loadMaster:lms|register:m1|Q[0]~1                    ; 0                 ; 6       ;
-;      - loadMaster:lms|register:m2|Q[0]~1                    ; 0                 ; 6       ;
-;      - loadMaster:lms|register:m3|Q[0]~1                    ; 0                 ; 6       ;
-; SW[2]                                                       ;                   ;         ;
-;      - loadMaster:lms|register:m0|Q[2]~2                    ; 1                 ; 6       ;
-;      - loadMaster:lms|register:m1|Q[2]~2                    ; 1                 ; 6       ;
-;      - loadMaster:lms|register:m2|Q[2]~2                    ; 1                 ; 6       ;
-;      - loadMaster:lms|register:m3|Q[2]~2                    ; 1                 ; 6       ;
-; SW[16]                                                      ;                   ;         ;
-;      - topCoinAccept:tca|coinAccept:ca|Mux0~0               ; 0                 ; 6       ;
-;      - topCoinAccept:tca|coinAccept:ca|Selector0~0          ; 0                 ; 6       ;
-;      - topCoinAccept:tca|coinAccept:ca|nextState~7          ; 0                 ; 6       ;
-;      - topCoinAccept:tca|coinAccept:ca|Selector3~0          ; 0                 ; 6       ;
-;      - topCoinAccept:tca|coinAccept:ca|nextState.d1ch3~4    ; 0                 ; 6       ;
-; SW[17]                                                      ;                   ;         ;
-;      - topCoinAccept:tca|coinAccept:ca|Mux0~0               ; 1                 ; 6       ;
-;      - topCoinAccept:tca|coinAccept:ca|Selector0~0          ; 1                 ; 6       ;
-;      - topCoinAccept:tca|coinAccept:ca|nextState~7          ; 1                 ; 6       ;
-;      - topCoinAccept:tca|coinAccept:ca|Selector3~0          ; 1                 ; 6       ;
-;      - topCoinAccept:tca|coinAccept:ca|nextState.d1ch3~4    ; 1                 ; 6       ;
-; KEY[1]                                                      ;                   ;         ;
-;      - topCoinAccept:tca|coinAccept:ca|prevCoinInserted~0   ; 0                 ; 6       ;
-+-------------------------------------------------------------+-------------------+---------+
++-----------------------------------------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                                                      ;
++-----------------------------------------------------------------------+-------------------+---------+
+; Source Pin / Fanout                                                   ; Pad To Core Index ; Setting ;
++-----------------------------------------------------------------------+-------------------+---------+
+; SW[12]                                                                ;                   ;         ;
+; SW[13]                                                                ;                   ;         ;
+; SW[14]                                                                ;                   ;         ;
+; SW[15]                                                                ;                   ;         ;
+; CLOCK_50                                                              ;                   ;         ;
+; KEY[0]                                                                ;                   ;         ;
+;      - game_playing:igp|startGameNow                                  ; 1                 ; 6       ;
+;      - game_playing:igp|currState.ingame                              ; 1                 ; 6       ;
+;      - topCoinAccept:tca|coinAccept:ca|currState.d0ch0                ; 1                 ; 6       ;
+;      - topCoinAccept:tca|coinAccept:ca|currState.d0ch1                ; 1                 ; 6       ;
+;      - topCoinAccept:tca|coinAccept:ca|currState.d0ch2                ; 1                 ; 6       ;
+;      - topCoinAccept:tca|coinAccept:ca|currState.d0ch3                ; 1                 ; 6       ;
+;      - topCoinAccept:tca|register:r1|Q[3]~12                          ; 1                 ; 6       ;
+;      - GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.loadGuessS   ; 1                 ; 6       ;
+;      - GradeGuessTop:ggt|register:rn|Q[3]~12                          ; 1                 ; 6       ;
+;      - GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZnarlyS ; 1                 ; 6       ;
+;      - game_playing:igp|currState.backtowaiting                       ; 1                 ; 6       ;
+;      - GradeGuessTop:ggt|loadGuess:lg|register:g3|Q[1]~0              ; 1                 ; 6       ;
+;      - game_playing:igp|currState.waitingtoplay                       ; 1                 ; 6       ;
+;      - game_playing:igp|prevstartGame                                 ; 1                 ; 6       ;
+;      - game_playing:igp|prevprevstartGame                             ; 1                 ; 6       ;
+;      - topCoinAccept:tca|coinAccept:ca|goNow                          ; 1                 ; 6       ;
+;      - topCoinAccept:tca|coinAccept:ca|currState.d1ch0                ; 1                 ; 6       ;
+;      - topCoinAccept:tca|coinAccept:ca|currState.d1ch1                ; 1                 ; 6       ;
+;      - topCoinAccept:tca|coinAccept:ca|currState.d1ch2                ; 1                 ; 6       ;
+;      - topCoinAccept:tca|coinAccept:ca|currState.d1ch3                ; 1                 ; 6       ;
+;      - GradeGuessTop:ggt|guessControlFsm:gcfsm|GradeItNow             ; 1                 ; 6       ;
+;      - GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.waitingS     ; 1                 ; 6       ;
+;      - GradeGuessTop:ggt|loadGuess:lg|register:g3|Q[1]~1              ; 1                 ; 6       ;
+;      - topCoinAccept:tca|coinAccept:ca|prevCoinInserted               ; 1                 ; 6       ;
+;      - topCoinAccept:tca|coinAccept:ca|prevPrevCoinInserted           ; 1                 ; 6       ;
+;      - GradeGuessTop:ggt|guessControlFsm:gcfsm|prevGradeIt            ; 1                 ; 6       ;
+;      - GradeGuessTop:ggt|guessControlFsm:gcfsm|prevPrevGradeIt        ; 1                 ; 6       ;
+;      - GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.doneS        ; 1                 ; 6       ;
+;      - GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZoodS   ; 1                 ; 6       ;
+;      - GradeGuessTop:ggt|GradeZood:gz0|currentState.done              ; 1                 ; 6       ;
+;      - GradeGuessTop:ggt|GradeZood:gz0|currentState.check2            ; 1                 ; 6       ;
+;      - GradeGuessTop:ggt|GradeZood:gz0|currentState.check1            ; 1                 ; 6       ;
+;      - GradeGuessTop:ggt|GradeZood:gz0|currentState.check0            ; 1                 ; 6       ;
+;      - GradeGuessTop:ggt|GradeZood:gz0|currentState.waiting           ; 1                 ; 6       ;
+; SW[1]                                                                 ;                   ;         ;
+;      - loadMaster:lms|register:m0|Q[1]~0                              ; 0                 ; 6       ;
+;      - loadMaster:lms|register:m1|Q[1]~0                              ; 0                 ; 6       ;
+;      - loadMaster:lms|register:m2|Q[1]~0                              ; 0                 ; 6       ;
+;      - loadMaster:lms|register:m3|Q[1]~0                              ; 0                 ; 6       ;
+;      - GradeGuessTop:ggt|loadGuess:lg|register:g0|Q~1                 ; 0                 ; 6       ;
+; SW[3]                                                                 ;                   ;         ;
+;      - loadMaster:lms|load2~0                                         ; 0                 ; 6       ;
+;      - loadMaster:lms|load1~0                                         ; 0                 ; 6       ;
+;      - GradeGuessTop:ggt|loadGuess:lg|register:g1|Q~0                 ; 0                 ; 6       ;
+; KEY[3]                                                                ;                   ;         ;
+;      - loadMaster:lms|load2~0                                         ; 1                 ; 6       ;
+;      - loadMaster:lms|load1~0                                         ; 1                 ; 6       ;
+;      - GradeGuessTop:ggt|guessControlFsm:gcfsm|prevGradeIt~0          ; 1                 ; 6       ;
+; SW[4]                                                                 ;                   ;         ;
+;      - loadMaster:lms|load0~0                                         ; 0                 ; 6       ;
+;      - loadMaster:lms|load1~1                                         ; 0                 ; 6       ;
+;      - loadMaster:lms|load2~1                                         ; 0                 ; 6       ;
+;      - loadMaster:lms|load3~0                                         ; 0                 ; 6       ;
+;      - GradeGuessTop:ggt|loadGuess:lg|register:g1|Q~1                 ; 0                 ; 6       ;
+; SW[0]                                                                 ;                   ;         ;
+;      - loadMaster:lms|register:m0|Q[0]~1                              ; 0                 ; 6       ;
+;      - loadMaster:lms|register:m1|Q[0]~1                              ; 0                 ; 6       ;
+;      - loadMaster:lms|register:m2|Q[0]~1                              ; 0                 ; 6       ;
+;      - loadMaster:lms|register:m3|Q[0]~1                              ; 0                 ; 6       ;
+;      - GradeGuessTop:ggt|loadGuess:lg|register:g0|Q~0                 ; 0                 ; 6       ;
+; SW[2]                                                                 ;                   ;         ;
+;      - loadMaster:lms|register:m0|Q[2]~2                              ; 1                 ; 6       ;
+;      - loadMaster:lms|register:m1|Q[2]~2                              ; 1                 ; 6       ;
+;      - loadMaster:lms|register:m2|Q[2]~2                              ; 1                 ; 6       ;
+;      - loadMaster:lms|register:m3|Q[2]~2                              ; 1                 ; 6       ;
+;      - GradeGuessTop:ggt|loadGuess:lg|register:g0|Q~2                 ; 1                 ; 6       ;
+; SW[16]                                                                ;                   ;         ;
+;      - topCoinAccept:tca|coinAccept:ca|Mux0~0                         ; 0                 ; 6       ;
+;      - topCoinAccept:tca|coinAccept:ca|Selector0~0                    ; 0                 ; 6       ;
+;      - topCoinAccept:tca|coinAccept:ca|nextState~7                    ; 0                 ; 6       ;
+;      - topCoinAccept:tca|coinAccept:ca|Selector3~0                    ; 0                 ; 6       ;
+;      - topCoinAccept:tca|coinAccept:ca|nextState.d1ch3~4              ; 0                 ; 6       ;
+; SW[17]                                                                ;                   ;         ;
+;      - topCoinAccept:tca|coinAccept:ca|Mux0~0                         ; 1                 ; 6       ;
+;      - topCoinAccept:tca|coinAccept:ca|Selector0~0                    ; 1                 ; 6       ;
+;      - topCoinAccept:tca|coinAccept:ca|nextState~7                    ; 1                 ; 6       ;
+;      - topCoinAccept:tca|coinAccept:ca|Selector3~0                    ; 1                 ; 6       ;
+;      - topCoinAccept:tca|coinAccept:ca|nextState.d1ch3~4              ; 1                 ; 6       ;
+; SW[5]                                                                 ;                   ;         ;
+;      - GradeGuessTop:ggt|loadGuess:lg|register:g1|Q~2                 ; 1                 ; 6       ;
+; SW[9]                                                                 ;                   ;         ;
+;      - GradeGuessTop:ggt|loadGuess:lg|register:g3|Q~2                 ; 0                 ; 6       ;
+; SW[10]                                                                ;                   ;         ;
+;      - GradeGuessTop:ggt|loadGuess:lg|register:g3|Q~3                 ; 1                 ; 6       ;
+; SW[11]                                                                ;                   ;         ;
+;      - GradeGuessTop:ggt|loadGuess:lg|register:g3|Q~4                 ; 1                 ; 6       ;
+; SW[6]                                                                 ;                   ;         ;
+;      - GradeGuessTop:ggt|loadGuess:lg|register:g2|Q~0                 ; 1                 ; 6       ;
+; SW[7]                                                                 ;                   ;         ;
+;      - GradeGuessTop:ggt|loadGuess:lg|register:g2|Q~1                 ; 0                 ; 6       ;
+; SW[8]                                                                 ;                   ;         ;
+;      - GradeGuessTop:ggt|loadGuess:lg|register:g2|Q~2                 ; 0                 ; 6       ;
+; KEY[2]                                                                ;                   ;         ;
+;      - game_playing:igp|prevstartGame~0                               ; 0                 ; 6       ;
+; KEY[1]                                                                ;                   ;         ;
+;      - topCoinAccept:tca|coinAccept:ca|prevCoinInserted~0             ; 0                 ; 6       ;
++-----------------------------------------------------------------------+-------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                                       ;
-+-------------------------------------------+---------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
-; Name                                      ; Location            ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-------------------------------------------+---------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
-; CLOCK_50                                  ; PIN_Y2              ; 27      ; Clock                      ; yes    ; Global Clock         ; GCLK4            ; --                        ;
-; KEY[0]                                    ; PIN_M23             ; 24      ; Async. clear, Clock enable ; no     ; --                   ; --               ; --                        ;
-; topCoinAccept:tca|coinAccept:ca|WideOr4~0 ; LCCOMB_X107_Y12_N26 ; 6       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; topCoinAccept:tca|register:r1|Q[1]~12     ; LCCOMB_X108_Y12_N4  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-+-------------------------------------------+---------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                                            ;
++----------------------------------------------------------------+---------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
+; Name                                                           ; Location            ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++----------------------------------------------------------------+---------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
+; CLOCK_50                                                       ; PIN_Y2              ; 62      ; Clock                      ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZnarlyS ; FF_X114_Y33_N27     ; 8       ; Clock                      ; yes    ; Global Clock         ; GCLK7            ; --                        ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.loadGuessS   ; FF_X113_Y22_N9      ; 19      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g3|Q[1]~1              ; LCCOMB_X113_Y22_N18 ; 12      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; GradeGuessTop:ggt|register:rn|Q[3]~12                          ; LCCOMB_X112_Y22_N28 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; KEY[0]                                                         ; PIN_M23             ; 34      ; Async. clear, Clock enable ; no     ; --                   ; --               ; --                        ;
+; topCoinAccept:tca|en_reg                                       ; LCCOMB_X109_Y20_N12 ; 4       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; topCoinAccept:tca|register:r1|Q[3]~12                          ; LCCOMB_X109_Y20_N14 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
++----------------------------------------------------------------+---------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                ;
-+----------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Name     ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+----------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; CLOCK_50 ; PIN_Y2   ; 27      ; 1                                    ; Global Clock         ; GCLK4            ; --                        ;
-+----------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                                                                             ;
++----------------------------------------------------------------+-----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name                                                           ; Location        ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++----------------------------------------------------------------+-----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; CLOCK_50                                                       ; PIN_Y2          ; 62      ; 4                                    ; Global Clock         ; GCLK4            ; --                        ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZnarlyS ; FF_X114_Y33_N27 ; 8       ; 0                                    ; Global Clock         ; GCLK7            ; --                        ;
++----------------------------------------------------------------+-----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
-+----------------------------------------------------------------+
-; Non-Global High Fan-Out Signals                                ;
-+------------------------------------------------------+---------+
-; Name                                                 ; Fan-Out ;
-+------------------------------------------------------+---------+
-; KEY[0]~input                                         ; 24      ;
-; topCoinAccept:tca|register:r1|Q[0]                   ; 10      ;
-; topCoinAccept:tca|register:r1|Q[1]                   ; 10      ;
-; topCoinAccept:tca|register:r1|Q[2]                   ; 10      ;
-; topCoinAccept:tca|register:r1|Q[3]                   ; 10      ;
-; loadMaster:lms|register:m3|Q[2]                      ; 9       ;
-; loadMaster:lms|register:m3|Q[0]                      ; 9       ;
-; loadMaster:lms|register:m3|Q[1]                      ; 9       ;
-; loadMaster:lms|register:m2|Q[2]                      ; 9       ;
-; loadMaster:lms|register:m2|Q[0]                      ; 9       ;
-; loadMaster:lms|register:m2|Q[1]                      ; 9       ;
-; loadMaster:lms|register:m1|Q[2]                      ; 9       ;
-; loadMaster:lms|register:m1|Q[0]                      ; 9       ;
-; loadMaster:lms|register:m1|Q[1]                      ; 9       ;
-; loadMaster:lms|register:m0|Q[2]                      ; 9       ;
-; loadMaster:lms|register:m0|Q[0]                      ; 9       ;
-; loadMaster:lms|register:m0|Q[1]                      ; 9       ;
-; topCoinAccept:tca|coinAccept:ca|goNow                ; 6       ;
-; topCoinAccept:tca|coinAccept:ca|WideOr4~0            ; 6       ;
-; SW[17]~input                                         ; 5       ;
-; SW[16]~input                                         ; 5       ;
-; SW[2]~input                                          ; 4       ;
-; SW[0]~input                                          ; 4       ;
-; SW[4]~input                                          ; 4       ;
-; KEY[3]~input                                         ; 4       ;
-; SW[3]~input                                          ; 4       ;
-; SW[1]~input                                          ; 4       ;
-; topCoinAccept:tca|coinAccept:ca|nextState~7          ; 4       ;
-; topCoinAccept:tca|coinAccept:ca|nextState~5          ; 4       ;
-; topCoinAccept:tca|coinAccept:ca|nextState~4          ; 4       ;
-; topCoinAccept:tca|register:r1|Q[1]~12                ; 4       ;
-; topCoinAccept:tca|coinAccept:ca|nextState.d1ch3~4    ; 3       ;
-; topCoinAccept:tca|coinAccept:ca|nextState~6          ; 3       ;
-; topCoinAccept:tca|coinAccept:ca|Selector0~0          ; 3       ;
-; topCoinAccept:tca|coinAccept:ca|Mux0~0               ; 3       ;
-; loadMaster:lms|load3~1                               ; 3       ;
-; loadMaster:lms|load2~1                               ; 3       ;
-; loadMaster:lms|load1~1                               ; 3       ;
-; loadMaster:lms|load0~1                               ; 3       ;
-; topCoinAccept:tca|coinAccept:ca|currState.d0ch0      ; 3       ;
-; topCoinAccept:tca|coinAccept:ca|currState.d0ch3      ; 3       ;
-; topCoinAccept:tca|coinAccept:ca|currState.d0ch2      ; 3       ;
-; loadMaster:lms|masterLoaded~0                        ; 3       ;
-; topCoinAccept:tca|coinAccept:ca|prevCoinInserted     ; 2       ;
-; topCoinAccept:tca|coinAccept:ca|Selector2~3          ; 2       ;
-; topCoinAccept:tca|coinAccept:ca|currState.d1ch3      ; 2       ;
-; topCoinAccept:tca|coinAccept:ca|currState.d1ch2      ; 2       ;
-; topCoinAccept:tca|coinAccept:ca|currState.d1ch0      ; 2       ;
-; topCoinAccept:tca|coinAccept:ca|currState.d0ch1      ; 2       ;
-; loadMaster:lms|load3~0                               ; 2       ;
-; loadMaster:lms|load2~0                               ; 2       ;
-; loadMaster:lms|load1~0                               ; 2       ;
-; loadMaster:lms|load0~0                               ; 2       ;
-; topCoinAccept:tca|ready~0                            ; 2       ;
-; KEY[1]~input                                         ; 1       ;
-; KEY[2]~input                                         ; 1       ;
-; topCoinAccept:tca|coinAccept:ca|prevCoinInserted~0   ; 1       ;
-; topCoinAccept:tca|coinAccept:ca|nextState.d1ch3~5    ; 1       ;
-; topCoinAccept:tca|coinAccept:ca|Selector2~4          ; 1       ;
-; topCoinAccept:tca|coinAccept:ca|Selector5~0          ; 1       ;
-; topCoinAccept:tca|coinAccept:ca|goNow~0              ; 1       ;
-; topCoinAccept:tca|coinAccept:ca|prevPrevCoinInserted ; 1       ;
-; topCoinAccept:tca|coinAccept:ca|Selector4~0          ; 1       ;
-; topCoinAccept:tca|coinAccept:ca|Selector3~1          ; 1       ;
-; topCoinAccept:tca|coinAccept:ca|Selector3~0          ; 1       ;
-; topCoinAccept:tca|coinAccept:ca|nextState.d0ch0~0    ; 1       ;
-; topCoinAccept:tca|coinAccept:ca|Selector2~2          ; 1       ;
-; topCoinAccept:tca|coinAccept:ca|Selector1~0          ; 1       ;
-; topCoinAccept:tca|coinAccept:ca|Selector0~1          ; 1       ;
-; topCoinAccept:tca|coinAccept:ca|currState.d1ch1      ; 1       ;
-; loadMaster:lms|register:m3|Q[2]~2                    ; 1       ;
-; loadMaster:lms|register:m3|Q[0]~1                    ; 1       ;
-; loadMaster:lms|register:m3|Q[1]~0                    ; 1       ;
-; loadMaster:lms|register:m2|Q[2]~2                    ; 1       ;
-; loadMaster:lms|register:m2|Q[0]~1                    ; 1       ;
-; loadMaster:lms|register:m2|Q[1]~0                    ; 1       ;
-; loadMaster:lms|register:m1|Q[2]~2                    ; 1       ;
-; loadMaster:lms|register:m1|Q[0]~1                    ; 1       ;
-; loadMaster:lms|register:m1|Q[1]~0                    ; 1       ;
-; loadMaster:lms|register:m0|Q[2]~2                    ; 1       ;
-; loadMaster:lms|register:m0|Q[0]~1                    ; 1       ;
-; loadMaster:lms|register:m0|Q[1]~0                    ; 1       ;
-; topCoinAccept:tca|adderIn~2                          ; 1       ;
-; topCoinAccept:tca|adderIn~1                          ; 1       ;
-; topCoinAccept:tca|adderIn~0                          ; 1       ;
-; topCoinAccept:tca|ready~1                            ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h1|segment[6]       ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h1|segment[5]~3     ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h1|segment[4]       ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h1|segment[3]       ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h1|segment~2        ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h1|segment[1]~1     ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h1|segment[0]~0     ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h2|segment[6]       ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h2|segment[5]~3     ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h2|segment[4]       ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h2|segment[3]       ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h2|segment~2        ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h2|segment[1]~1     ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h2|segment[0]~0     ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h3|segment[6]       ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h3|segment[5]~3     ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h3|segment[4]       ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h3|segment[3]       ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h3|segment~2        ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h3|segment[1]~1     ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h3|segment[0]~0     ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h4|segment[6]       ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h4|segment[5]~3     ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h4|segment[4]       ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h4|segment[3]       ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h4|segment~2        ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h4|segment[1]~1     ; 1       ;
-; loadMaster:lms|BCDtoSevenSegment:h4|segment[0]~0     ; 1       ;
-; BCDtoSevenSegment:ng|segment[6]~6                    ; 1       ;
-; BCDtoSevenSegment:ng|segment[5]~5                    ; 1       ;
-; BCDtoSevenSegment:ng|segment[4]~4                    ; 1       ;
-; BCDtoSevenSegment:ng|segment[3]~3                    ; 1       ;
-; BCDtoSevenSegment:ng|segment[2]~2                    ; 1       ;
-; BCDtoSevenSegment:ng|segment[1]~1                    ; 1       ;
-; BCDtoSevenSegment:ng|segment[0]~0                    ; 1       ;
-; topCoinAccept:tca|register:r1|Q[3]~10                ; 1       ;
-; topCoinAccept:tca|register:r1|Q[2]~9                 ; 1       ;
-; topCoinAccept:tca|register:r1|Q[2]~8                 ; 1       ;
-; topCoinAccept:tca|register:r1|Q[1]~7                 ; 1       ;
-; topCoinAccept:tca|register:r1|Q[1]~6                 ; 1       ;
-; topCoinAccept:tca|register:r1|Q[0]~5                 ; 1       ;
-; topCoinAccept:tca|register:r1|Q[0]~4                 ; 1       ;
-+------------------------------------------------------+---------+
++--------------------------------------------------------------------------+
+; Non-Global High Fan-Out Signals                                          ;
++----------------------------------------------------------------+---------+
+; Name                                                           ; Fan-Out ;
++----------------------------------------------------------------+---------+
+; KEY[0]~input                                                   ; 34      ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.loadGuessS   ; 19      ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g3|Q[1]~1              ; 12      ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g3|Q[1]~0              ; 12      ;
+; game_playing:igp|currState.ingame                              ; 11      ;
+; loadMaster:lms|register:m1|Q[2]                                ; 11      ;
+; loadMaster:lms|register:m3|Q[2]                                ; 10      ;
+; loadMaster:lms|register:m3|Q[0]                                ; 10      ;
+; loadMaster:lms|register:m3|Q[1]                                ; 10      ;
+; loadMaster:lms|register:m2|Q[2]                                ; 10      ;
+; loadMaster:lms|register:m2|Q[0]                                ; 10      ;
+; loadMaster:lms|register:m2|Q[1]                                ; 10      ;
+; loadMaster:lms|register:m1|Q[0]                                ; 10      ;
+; loadMaster:lms|register:m1|Q[1]                                ; 10      ;
+; loadMaster:lms|register:m0|Q[2]                                ; 10      ;
+; loadMaster:lms|register:m0|Q[0]                                ; 10      ;
+; loadMaster:lms|register:m0|Q[1]                                ; 10      ;
+; GradeGuessTop:ggt|register:rn|Q[0]                             ; 10      ;
+; GradeGuessTop:ggt|register:rn|Q[1]                             ; 10      ;
+; GradeGuessTop:ggt|register:rn|Q[2]                             ; 10      ;
+; GradeGuessTop:ggt|register:rn|Q[3]                             ; 10      ;
+; topCoinAccept:tca|register:r1|Q[0]                             ; 10      ;
+; topCoinAccept:tca|register:r1|Q[1]                             ; 10      ;
+; topCoinAccept:tca|register:r1|Q[2]                             ; 10      ;
+; topCoinAccept:tca|register:r1|Q[3]                             ; 10      ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|Znarly[2]                    ; 9       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|Znarly[1]                    ; 9       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|Znarly[0]                    ; 9       ;
+; topCoinAccept:tca|coinAccept:ca|goNow                          ; 6       ;
+; SW[17]~input                                                   ; 5       ;
+; SW[16]~input                                                   ; 5       ;
+; SW[2]~input                                                    ; 5       ;
+; SW[0]~input                                                    ; 5       ;
+; SW[4]~input                                                    ; 5       ;
+; SW[1]~input                                                    ; 5       ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZoodS   ; 5       ;
+; game_playing:igp|startGameNow                                  ; 5       ;
+; topCoinAccept:tca|coinAccept:ca|nextState~7                    ; 4       ;
+; topCoinAccept:tca|coinAccept:ca|nextState~5                    ; 4       ;
+; topCoinAccept:tca|coinAccept:ca|nextState~4                    ; 4       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|comparator:gm0|Equal0~1      ; 4       ;
+; GradeGuessTop:ggt|register:rn|Q[3]~12                          ; 4       ;
+; topCoinAccept:tca|register:r1|Q[3]~12                          ; 4       ;
+; topCoinAccept:tca|en_reg                                       ; 4       ;
+; GradeGuessTop:ggt|addIn[3]                                     ; 4       ;
+; BCDtoSevenSegment:zo|segment[0]                                ; 4       ;
+; KEY[3]~input                                                   ; 3       ;
+; SW[3]~input                                                    ; 3       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|Add0~4                       ; 3       ;
+; GradeGuessTop:ggt|GradeZood:gz0|currentState.waiting           ; 3       ;
+; GradeGuessTop:ggt|GradeZood:gz0|currentState.done              ; 3       ;
+; topCoinAccept:tca|coinAccept:ca|nextState.d1ch3~4              ; 3       ;
+; topCoinAccept:tca|coinAccept:ca|nextState~6                    ; 3       ;
+; topCoinAccept:tca|coinAccept:ca|Selector0~0                    ; 3       ;
+; topCoinAccept:tca|coinAccept:ca|Mux0~0                         ; 3       ;
+; loadMaster:lms|load3~0                                         ; 3       ;
+; loadMaster:lms|load2~1                                         ; 3       ;
+; loadMaster:lms|load1~1                                         ; 3       ;
+; game_playing:igp|currState.backtowaiting                       ; 3       ;
+; loadMaster:lms|load0~0                                         ; 3       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|Add1~1                       ; 3       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|comparator:gm2|Equal0~1      ; 3       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|comparator:gm3|Equal0~1      ; 3       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|comparator:gm1|Equal0~1      ; 3       ;
+; topCoinAccept:tca|adderIn~0                                    ; 3       ;
+; topCoinAccept:tca|coinAccept:ca|currState.d0ch3                ; 3       ;
+; topCoinAccept:tca|coinAccept:ca|currState.d0ch2                ; 3       ;
+; topCoinAccept:tca|coinAccept:ca|currState.d0ch0                ; 3       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|GameWon                      ; 3       ;
+; BCDtoSevenSegment:zo|segment[3]~0                              ; 3       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|seenOutZnarly[0]             ; 2       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|seenOutZnarly[1]             ; 2       ;
+; GradeGuessTop:ggt|GradeZood:gz0|currentState.check0            ; 2       ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|prevGradeIt            ; 2       ;
+; topCoinAccept:tca|coinAccept:ca|prevCoinInserted               ; 2       ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.waitingS     ; 2       ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|GradeItNow             ; 2       ;
+; topCoinAccept:tca|coinAccept:ca|Selector2~3                    ; 2       ;
+; topCoinAccept:tca|coinAccept:ca|currState.d1ch3                ; 2       ;
+; topCoinAccept:tca|coinAccept:ca|currState.d1ch2                ; 2       ;
+; topCoinAccept:tca|coinAccept:ca|currState.d1ch0                ; 2       ;
+; game_playing:igp|prevstartGame                                 ; 2       ;
+; game_playing:igp|currState.waitingtoplay                       ; 2       ;
+; loadMaster:lms|load1~0                                         ; 2       ;
+; loadMaster:lms|load2~0                                         ; 2       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|Add1~0                       ; 2       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g1|Q[2]                ; 2       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|comparator:gm1|Equal0~0      ; 2       ;
+; topCoinAccept:tca|coinAccept:ca|currState.d0ch1                ; 2       ;
+; topCoinAccept:tca|ready~1                                      ; 2       ;
+; loadMaster:lms|masterLoaded~0                                  ; 2       ;
+; loadMaster:lms|Equal3~0                                        ; 2       ;
+; loadMaster:lms|Equal2~0                                        ; 2       ;
+; loadMaster:lms|Equal1~0                                        ; 2       ;
+; loadMaster:lms|Equal0~0                                        ; 2       ;
+; GradeGuessTop:ggt|Equal0~0                                     ; 2       ;
+; GradeGuessTop:ggt|LessThan0~0                                  ; 2       ;
+; KEY[1]~input                                                   ; 1       ;
+; KEY[2]~input                                                   ; 1       ;
+; SW[8]~input                                                    ; 1       ;
+; SW[7]~input                                                    ; 1       ;
+; SW[6]~input                                                    ; 1       ;
+; SW[11]~input                                                   ; 1       ;
+; SW[10]~input                                                   ; 1       ;
+; SW[9]~input                                                    ; 1       ;
+; SW[5]~input                                                    ; 1       ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|prevGradeIt~0          ; 1       ;
+; topCoinAccept:tca|coinAccept:ca|prevCoinInserted~0             ; 1       ;
+; game_playing:igp|prevstartGame~0                               ; 1       ;
+; topCoinAccept:tca|coinAccept:ca|nextState.d1ch3~5              ; 1       ;
+; topCoinAccept:tca|coinAccept:ca|Selector2~4                    ; 1       ;
+; GradeGuessTop:ggt|GradeZood:gz0|Selector4~0                    ; 1       ;
+; GradeGuessTop:ggt|GradeZood:gz0|Selector0~0                    ; 1       ;
+; GradeGuessTop:ggt|GradeZood:gz0|Selector1~1                    ; 1       ;
+; GradeGuessTop:ggt|GradeZood:gz0|Selector1~0                    ; 1       ;
+; GradeGuessTop:ggt|GradeZood:gz0|Selector2~0                    ; 1       ;
+; GradeGuessTop:ggt|GradeZood:gz0|currentState.check1            ; 1       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|seenOutZnarly[2]             ; 1       ;
+; GradeGuessTop:ggt|GradeZood:gz0|Selector5~0                    ; 1       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|seenOutZnarly[3]             ; 1       ;
+; GradeGuessTop:ggt|GradeZood:gz0|currentState.check2            ; 1       ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|Selector1~0            ; 1       ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|nextState.doneS~0      ; 1       ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|Selector0~0            ; 1       ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.doneS        ; 1       ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|GradeItNow~0           ; 1       ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|prevPrevGradeIt        ; 1       ;
+; topCoinAccept:tca|coinAccept:ca|Selector5~0                    ; 1       ;
+; topCoinAccept:tca|coinAccept:ca|Selector4~0                    ; 1       ;
+; topCoinAccept:tca|coinAccept:ca|Selector3~1                    ; 1       ;
+; topCoinAccept:tca|coinAccept:ca|Selector3~0                    ; 1       ;
+; topCoinAccept:tca|coinAccept:ca|goNow~0                        ; 1       ;
+; topCoinAccept:tca|coinAccept:ca|prevPrevCoinInserted           ; 1       ;
+; game_playing:igp|Selector0~0                                   ; 1       ;
+; game_playing:igp|nextState.backtowaiting~0                     ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g2|Q~2                 ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g2|Q~1                 ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g2|Q~0                 ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g3|Q~4                 ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g3|Q~3                 ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g3|Q~2                 ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g0|Q~2                 ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g0|Q~1                 ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g0|Q~0                 ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g1|Q~2                 ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g1|Q~1                 ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g1|Q~0                 ; 1       ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|nextState.loadGuessS~0 ; 1       ;
+; topCoinAccept:tca|coinAccept:ca|Selector2~2                    ; 1       ;
+; topCoinAccept:tca|coinAccept:ca|Selector1~0                    ; 1       ;
+; topCoinAccept:tca|coinAccept:ca|Selector0~1                    ; 1       ;
+; topCoinAccept:tca|coinAccept:ca|currState.d1ch1                ; 1       ;
+; topCoinAccept:tca|coinAccept:ca|nextState.d0ch0~0              ; 1       ;
+; game_playing:igp|startGameNow~0                                ; 1       ;
+; game_playing:igp|prevprevstartGame                             ; 1       ;
+; game_playing:igp|Selector1~0                                   ; 1       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|comparator:gw|Equal0~0       ; 1       ;
+; loadMaster:lms|register:m3|Q[2]~2                              ; 1       ;
+; loadMaster:lms|register:m3|Q[0]~1                              ; 1       ;
+; loadMaster:lms|register:m3|Q[1]~0                              ; 1       ;
+; loadMaster:lms|register:m2|Q[2]~2                              ; 1       ;
+; loadMaster:lms|register:m2|Q[0]~1                              ; 1       ;
+; loadMaster:lms|register:m2|Q[1]~0                              ; 1       ;
+; loadMaster:lms|register:m1|Q[2]~2                              ; 1       ;
+; loadMaster:lms|register:m1|Q[0]~1                              ; 1       ;
+; loadMaster:lms|register:m1|Q[1]~0                              ; 1       ;
+; loadMaster:lms|register:m0|Q[2]~2                              ; 1       ;
+; loadMaster:lms|register:m0|Q[0]~1                              ; 1       ;
+; loadMaster:lms|register:m0|Q[1]~0                              ; 1       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|rsrl[2]~2                    ; 1       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|rsrl[1]~1                    ; 1       ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZnarlyS ; 1       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|rsrl[0]~0                    ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g2|Q[2]                ; 1       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|comparator:gm2|Equal0~0      ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g2|Q[1]                ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g2|Q[0]                ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g3|Q[2]                ; 1       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|comparator:gm3|Equal0~0      ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g3|Q[1]                ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g3|Q[0]                ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g0|Q[2]                ; 1       ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|comparator:gm0|Equal0~0      ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g0|Q[1]                ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g0|Q[0]                ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g1|Q[1]                ; 1       ;
+; GradeGuessTop:ggt|loadGuess:lg|register:g1|Q[0]                ; 1       ;
+; topCoinAccept:tca|adderIn~2                                    ; 1       ;
+; topCoinAccept:tca|adderIn~1                                    ; 1       ;
+; topCoinAccept:tca|ready~0                                      ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h1|segment[6]                 ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h1|segment[5]~3               ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h1|segment[4]                 ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h1|segment[3]                 ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h1|segment~2                  ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h1|segment[1]~1               ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h1|segment[0]~0               ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h2|segment[6]                 ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h2|segment[5]~3               ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h2|segment[4]                 ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h2|segment[3]                 ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h2|segment~2                  ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h2|segment[1]~1               ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h2|segment[0]~0               ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h3|segment[6]                 ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h3|segment[5]~3               ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h3|segment[4]                 ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h3|segment[3]                 ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h3|segment~2                  ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h3|segment[1]~1               ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h3|segment[0]~0               ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h4|segment[6]                 ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h4|segment[5]~3               ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h4|segment[4]                 ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h4|segment[3]                 ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h4|segment~2                  ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h4|segment[1]~1               ; 1       ;
+; loadMaster:lms|BCDtoSevenSegment:h4|segment[0]~0               ; 1       ;
+; BCDtoSevenSegment:zn|segment[6]                                ; 1       ;
+; BCDtoSevenSegment:zn|segment[5]~3                              ; 1       ;
+; BCDtoSevenSegment:zn|segment[4]                                ; 1       ;
+; BCDtoSevenSegment:zn|segment[3]                                ; 1       ;
+; BCDtoSevenSegment:zn|segment~2                                 ; 1       ;
+; BCDtoSevenSegment:zn|segment[1]~1                              ; 1       ;
+; BCDtoSevenSegment:zn|segment[0]~0                              ; 1       ;
+; BCDtoSevenSegment:rn|segment[6]~6                              ; 1       ;
+; BCDtoSevenSegment:rn|segment[5]~5                              ; 1       ;
+; BCDtoSevenSegment:rn|segment[4]~4                              ; 1       ;
+; BCDtoSevenSegment:rn|segment[3]~3                              ; 1       ;
+; BCDtoSevenSegment:rn|segment[2]~2                              ; 1       ;
+; BCDtoSevenSegment:rn|segment[1]~1                              ; 1       ;
+; BCDtoSevenSegment:rn|segment[0]~0                              ; 1       ;
+; BCDtoSevenSegment:ng|segment[6]~6                              ; 1       ;
+; BCDtoSevenSegment:ng|segment[5]~5                              ; 1       ;
+; BCDtoSevenSegment:ng|segment[4]~4                              ; 1       ;
+; BCDtoSevenSegment:ng|segment[3]~3                              ; 1       ;
+; BCDtoSevenSegment:ng|segment[2]~2                              ; 1       ;
+; BCDtoSevenSegment:ng|segment[1]~1                              ; 1       ;
+; BCDtoSevenSegment:ng|segment[0]~0                              ; 1       ;
+; GradeGuessTop:ggt|register:rn|Q[3]~10                          ; 1       ;
+; GradeGuessTop:ggt|register:rn|Q[2]~9                           ; 1       ;
+; GradeGuessTop:ggt|register:rn|Q[2]~8                           ; 1       ;
+; GradeGuessTop:ggt|register:rn|Q[1]~7                           ; 1       ;
+; GradeGuessTop:ggt|register:rn|Q[1]~6                           ; 1       ;
+; GradeGuessTop:ggt|register:rn|Q[0]~5                           ; 1       ;
+; GradeGuessTop:ggt|register:rn|Q[0]~4                           ; 1       ;
+; topCoinAccept:tca|register:r1|Q[3]~10                          ; 1       ;
+; topCoinAccept:tca|register:r1|Q[2]~9                           ; 1       ;
+; topCoinAccept:tca|register:r1|Q[2]~8                           ; 1       ;
+; topCoinAccept:tca|register:r1|Q[1]~7                           ; 1       ;
+; topCoinAccept:tca|register:r1|Q[1]~6                           ; 1       ;
+; topCoinAccept:tca|register:r1|Q[0]~5                           ; 1       ;
+; topCoinAccept:tca|register:r1|Q[0]~4                           ; 1       ;
++----------------------------------------------------------------+---------+
 
 
 +-------------------------------------------------------+
@@ -2211,136 +2381,146 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+-------------------------+
 ; Other Routing Resource Type ; Usage                   ;
 +-----------------------------+-------------------------+
-; Block interconnects         ; 121 / 342,891 ( < 1 % ) ;
-; C16 interconnects           ; 42 / 10,120 ( < 1 % )   ;
-; C4 interconnects            ; 124 / 209,544 ( < 1 % ) ;
-; Direct links                ; 27 / 342,891 ( < 1 % )  ;
-; Global clocks               ; 1 / 20 ( 5 % )          ;
-; Local interconnects         ; 41 / 119,088 ( < 1 % )  ;
-; R24 interconnects           ; 37 / 9,963 ( < 1 % )    ;
-; R4 interconnects            ; 128 / 289,782 ( < 1 % ) ;
+; Block interconnects         ; 220 / 342,891 ( < 1 % ) ;
+; C16 interconnects           ; 49 / 10,120 ( < 1 % )   ;
+; C4 interconnects            ; 232 / 209,544 ( < 1 % ) ;
+; Direct links                ; 60 / 342,891 ( < 1 % )  ;
+; Global clocks               ; 2 / 20 ( 10 % )         ;
+; Local interconnects         ; 79 / 119,088 ( < 1 % )  ;
+; R24 interconnects           ; 43 / 9,963 ( < 1 % )    ;
+; R4 interconnects            ; 187 / 289,782 ( < 1 % ) ;
 +-----------------------------+-------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +--------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 8.80) ; Number of LABs  (Total = 10) ;
+; Number of Logic Elements  (Average = 9.65) ; Number of LABs  (Total = 17) ;
 +--------------------------------------------+------------------------------+
-; 1                                          ; 2                            ;
-; 2                                          ; 0                            ;
+; 1                                          ; 1                            ;
+; 2                                          ; 1                            ;
 ; 3                                          ; 0                            ;
 ; 4                                          ; 0                            ;
-; 5                                          ; 0                            ;
-; 6                                          ; 2                            ;
-; 7                                          ; 2                            ;
-; 8                                          ; 0                            ;
-; 9                                          ; 0                            ;
+; 5                                          ; 1                            ;
+; 6                                          ; 0                            ;
+; 7                                          ; 4                            ;
+; 8                                          ; 2                            ;
+; 9                                          ; 1                            ;
 ; 10                                         ; 0                            ;
-; 11                                         ; 0                            ;
+; 11                                         ; 1                            ;
 ; 12                                         ; 0                            ;
-; 13                                         ; 1                            ;
-; 14                                         ; 0                            ;
-; 15                                         ; 1                            ;
-; 16                                         ; 2                            ;
+; 13                                         ; 0                            ;
+; 14                                         ; 1                            ;
+; 15                                         ; 2                            ;
+; 16                                         ; 3                            ;
 +--------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 0.60) ; Number of LABs  (Total = 10) ;
+; LAB-wide Signals  (Average = 1.06) ; Number of LABs  (Total = 17) ;
 +------------------------------------+------------------------------+
-; 1 Clock                            ; 4                            ;
-; 1 Clock enable                     ; 2                            ;
+; 1 Async. clear                     ; 3                            ;
+; 1 Clock                            ; 8                            ;
+; 1 Clock enable                     ; 5                            ;
+; 2 Clocks                           ; 2                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 11.50) ; Number of LABs  (Total = 10) ;
+; Number of Signals Sourced  (Average = 13.76) ; Number of LABs  (Total = 17) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 2                            ;
-; 2                                            ; 0                            ;
+; 1                                            ; 0                            ;
+; 2                                            ; 2                            ;
 ; 3                                            ; 0                            ;
 ; 4                                            ; 0                            ;
-; 5                                            ; 0                            ;
-; 6                                            ; 2                            ;
-; 7                                            ; 2                            ;
+; 5                                            ; 1                            ;
+; 6                                            ; 0                            ;
+; 7                                            ; 4                            ;
 ; 8                                            ; 0                            ;
-; 9                                            ; 0                            ;
+; 9                                            ; 1                            ;
 ; 10                                           ; 0                            ;
-; 11                                           ; 0                            ;
+; 11                                           ; 1                            ;
 ; 12                                           ; 0                            ;
 ; 13                                           ; 0                            ;
-; 14                                           ; 0                            ;
+; 14                                           ; 1                            ;
 ; 15                                           ; 0                            ;
 ; 16                                           ; 1                            ;
 ; 17                                           ; 0                            ;
 ; 18                                           ; 0                            ;
-; 19                                           ; 0                            ;
+; 19                                           ; 1                            ;
 ; 20                                           ; 0                            ;
-; 21                                           ; 1                            ;
-; 22                                           ; 0                            ;
-; 23                                           ; 0                            ;
-; 24                                           ; 1                            ;
+; 21                                           ; 0                            ;
+; 22                                           ; 1                            ;
+; 23                                           ; 2                            ;
+; 24                                           ; 0                            ;
 ; 25                                           ; 0                            ;
-; 26                                           ; 1                            ;
+; 26                                           ; 0                            ;
+; 27                                           ; 0                            ;
+; 28                                           ; 0                            ;
+; 29                                           ; 0                            ;
+; 30                                           ; 2                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 7.70) ; Number of LABs  (Total = 10) ;
+; Number of Signals Sourced Out  (Average = 7.00) ; Number of LABs  (Total = 17) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 2                            ;
-; 2                                               ; 0                            ;
+; 1                                               ; 1                            ;
+; 2                                               ; 1                            ;
 ; 3                                               ; 0                            ;
-; 4                                               ; 0                            ;
-; 5                                               ; 0                            ;
-; 6                                               ; 2                            ;
-; 7                                               ; 2                            ;
-; 8                                               ; 0                            ;
-; 9                                               ; 1                            ;
-; 10                                              ; 0                            ;
-; 11                                              ; 0                            ;
-; 12                                              ; 0                            ;
-; 13                                              ; 2                            ;
-; 14                                              ; 1                            ;
+; 4                                               ; 1                            ;
+; 5                                               ; 1                            ;
+; 6                                               ; 0                            ;
+; 7                                               ; 4                            ;
+; 8                                               ; 3                            ;
+; 9                                               ; 5                            ;
+; 10                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                        ;
 +---------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 7.60) ; Number of LABs  (Total = 10) ;
+; Number of Distinct Inputs  (Average = 8.29) ; Number of LABs  (Total = 17) ;
 +---------------------------------------------+------------------------------+
 ; 0                                           ; 0                            ;
 ; 1                                           ; 0                            ;
-; 2                                           ; 1                            ;
-; 3                                           ; 5                            ;
-; 4                                           ; 0                            ;
+; 2                                           ; 0                            ;
+; 3                                           ; 6                            ;
+; 4                                           ; 3                            ;
 ; 5                                           ; 0                            ;
 ; 6                                           ; 0                            ;
-; 7                                           ; 0                            ;
+; 7                                           ; 1                            ;
 ; 8                                           ; 0                            ;
 ; 9                                           ; 1                            ;
 ; 10                                          ; 0                            ;
-; 11                                          ; 0                            ;
-; 12                                          ; 0                            ;
-; 13                                          ; 0                            ;
-; 14                                          ; 1                            ;
-; 15                                          ; 1                            ;
+; 11                                          ; 1                            ;
+; 12                                          ; 1                            ;
+; 13                                          ; 1                            ;
+; 14                                          ; 0                            ;
+; 15                                          ; 2                            ;
 ; 16                                          ; 0                            ;
 ; 17                                          ; 0                            ;
 ; 18                                          ; 0                            ;
 ; 19                                          ; 0                            ;
 ; 20                                          ; 0                            ;
-; 21                                          ; 1                            ;
+; 21                                          ; 0                            ;
+; 22                                          ; 0                            ;
+; 23                                          ; 0                            ;
+; 24                                          ; 0                            ;
+; 25                                          ; 0                            ;
+; 26                                          ; 0                            ;
+; 27                                          ; 0                            ;
+; 28                                          ; 0                            ;
+; 29                                          ; 1                            ;
 +---------------------------------------------+------------------------------+
 
 
@@ -2502,15 +2682,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_SYNC_N         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; VGA_VS             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; VGA_HS             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[5]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[6]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[7]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[8]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[9]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[10]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[11]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; CLOCK_50           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; KEY[2]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; KEY[0]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[1]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[3]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -2520,6 +2692,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SW[2]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[16]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[17]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[5]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[9]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[10]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[11]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[6]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[7]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[8]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; KEY[2]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; KEY[1]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 
@@ -2561,13 +2741,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------+--------+
 
 
++------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary              ;
++-----------------+----------------------+-------------------+
+; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
++-----------------+----------------------+-------------------+
+Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
+This will disable optimization of problematic paths and expose them for further analysis using either the TimeQuest Timing Analyzer or the Classic Timing Analyzer.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                                                     ;
++----------------------------------------------------------------+--------------------------------------------------------------+-------------------+
+; Source Register                                                ; Destination Register                                         ; Delay Added in ns ;
++----------------------------------------------------------------+--------------------------------------------------------------+-------------------+
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZnarlyS ; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZoodS ; 1.348             ;
+; GradeGuessTop:ggt|GradeZood:gz0|currentState.done              ; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZoodS ; 0.673             ;
+; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZoodS   ; GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZoodS ; 0.673             ;
+; GradeGuessTop:ggt|GradeZnarly:gzn|seenOutZnarly[1]             ; GradeGuessTop:ggt|GradeZood:gz0|currentState.check1          ; 0.031             ;
+; GradeGuessTop:ggt|GradeZood:gz0|currentState.check0            ; GradeGuessTop:ggt|GradeZood:gz0|currentState.check1          ; 0.031             ;
++----------------------------------------------------------------+--------------------------------------------------------------+-------------------+
+Note: This table only shows the top 100 paths that have the largest delay added for hold.
+
+
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Fitter
     Info: Version 12.1 Build 177 11/07/2012 SJ Full Version
-    Info: Processing started: Thu Mar 27 12:42:35 2014
+    Info: Processing started: Wed Apr  2 11:52:23 2014
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off Lab3B -c mastermindVGA
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (119006): Selected device EP4CE115F29C7 for design "mastermindVGA"
@@ -2594,10 +2797,14 @@ Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Ass
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'mastermindVGA.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained base clocks found in the design
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
-Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176353): Automatically promoted node CLOCK_50~input (placed in PIN Y2 (CLK2, DIFFCLK_1p))
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G4
+Info (176353): Automatically promoted node GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZnarlyS 
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
+    Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
+        Info (176357): Destination node GradeGuessTop:ggt|guessControlFsm:gcfsm|Selector1~0
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
@@ -3031,10 +3238,10 @@ Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file /afs/ece.cmu.edu/usr/gya/Private/240/lab3b/output_files/mastermindVGA.fit.smsg
 Info: Quartus II 32-bit Fitter was successful. 0 errors, 413 warnings
-    Info: Peak virtual memory: 645 megabytes
-    Info: Processing ended: Thu Mar 27 12:42:52 2014
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Peak virtual memory: 650 megabytes
+    Info: Processing ended: Wed Apr  2 11:52:38 2014
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:22
 
 
 +----------------------------+

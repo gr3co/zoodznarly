@@ -1,4 +1,10 @@
 
+State Machine - |chipInterface|game_playing:igp|currState
+Name currState.waitingtoplay currState.backtowaiting currState.ingame 
+currState.waitingtoplay 0 0 0 
+currState.ingame 1 0 1 
+currState.backtowaiting 1 1 0 
+
 State Machine - |chipInterface|GradeGuessTop:ggt|guessControlFsm:gcfsm|currState
 Name currState.gradeZoodS currState.gradeZnarlyS currState.loadGuessS currState.waitingS currState.doneS 
 currState.waitingS 0 0 0 0 0 

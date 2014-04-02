@@ -1,7 +1,7 @@
 module GradeGuessTop(
 	input logic [11:0] Guess,
 	input logic [2:0] master0, master1, master2, master3,
-	input logic CLOCK_50, reset, GradeIt, ready,
+	input logic CLOCK_50, reset, GradeIt, gamePlaying, resetMaster,
 	output logic [3:0] Znarly, Zood, RoundNumber,
 	output logic GameWon, GameOver
 	);
@@ -15,7 +15,7 @@ module GradeGuessTop(
 	logic [3:0] ZoodandZnarly, sum;
 	assign {zn3, zn2, zn1, zn0} = seenOutZood;
 	assign ZoodandZnarly = zn3+zn2+zn1+zn0;
-	assign Zood = (RoundNumber > 0) ?(ZoodandZnarly - Znarly) : 0;
+	assign Zood = (RoundNumber > 0) ? (ZoodandZnarly - Znarly) : 0;
 	
 	GradeZnarly     gzn(.*);
 	GradeZood       gz0(.*);
@@ -33,7 +33,7 @@ module GradeGuessTop(
 endmodule: GradeGuessTop
 
 module GradeZnarly(
-	input logic GradeZnarlyNow,
+	input logic GradeZnarlyNow, reset, gamePlaying,
 	input logic [2:0] guess0, guess1, guess2, guess3,
 	input logic [2:0] master0, master1, master2, master3,
 	input logic [3:0] RoundNumber,
@@ -46,7 +46,7 @@ module GradeZnarly(
 	logic eq0, eq1, eq2, eq3, eqgw;
 	assign seen = {eq3, eq2, eq1, eq0};
 	
-	assign rsrl = (RoundNumber > 0) ? eq0+eq1+eq2+eq3 : 0;
+	assign rsrl = (gamePlaying) ? eq0+eq1+eq2+eq3 : 0;
 
 	comparator #(4) gm0(, eq0, , guess0, master0);
 	comparator #(4) gm1(, eq1, , guess1, master1);
@@ -54,11 +54,12 @@ module GradeZnarly(
 	comparator #(4) gm3(, eq3, , guess3, master3);
 	comparator #(4) gw(, eqgw, , rsrl, 4);
 	
-	always @(posedge GradeZnarlyNow) begin
-		Znarly <= rsrl;
-		GameWon <= eqgw;
-		seenOutZnarly <= seen;
-	end
+	always @(posedge GradeZnarlyNow) 
+		begin
+			Znarly <= rsrl;
+			GameWon <= eqgw;
+			seenOutZnarly <= seen;
+		end
 	
 endmodule: GradeZnarly
 
@@ -224,7 +225,7 @@ module GradeZoodIndex(
 endmodule: GradeZoodIndex
 
 module guessControlFsm(
-	input logic GradeIt, CLOCK_50, reset, ready, zoodDone,
+	input logic GradeIt, CLOCK_50, reset, gamePlaying, zoodDone,
 	output logic loadGuessNow, GradeZnarlyNow, GradeZoodNow, IncRoundNumber);
 	
 	enum logic [2:0] {waitingS = 3'd0, loadGuessS = 3'd1, gradeZnarlyS = 3'd2, gradeZoodS = 3'd3, doneS = 3'd4}
@@ -235,62 +236,74 @@ module guessControlFsm(
 		  IncRoundNumber = 0;
         case(currState)
             waitingS: begin 
-					nextState = (GradeIt&ready) ? loadGuessS : waitingS;
+					nextState = (GradeItNow) ? loadGuessS : waitingS;
 					loadGuessNow = 0;
 					GradeZnarlyNow = 0;
 					GradeZoodNow = 0;
+					IncRoundNumber = 0;
 				end
 				loadGuessS: begin
 					nextState = gradeZnarlyS;
 					loadGuessNow = 1;
 					GradeZnarlyNow = 0;
 					GradeZoodNow = 0;
+					IncRoundNumber = 1;
 				end
 				gradeZnarlyS: begin
 					nextState = gradeZoodS;
 					loadGuessNow = 0;
 					GradeZnarlyNow = 1;
 					GradeZoodNow = 0;
+					IncRoundNumber = 0;
 				end
 				gradeZoodS: begin
 					nextState = zoodDone ? doneS : gradeZoodS;
 					loadGuessNow = 0;
 					GradeZnarlyNow = 0;
 					GradeZoodNow = 1;
+					IncRoundNumber = 0;
 				end
 				doneS: begin
 					nextState = waitingS;
 					loadGuessNow = 0;
 					GradeZnarlyNow = 0;
-					GradeZoodNow = 1;
+					GradeZoodNow = 0;
+					IncRoundNumber = 0;
 				end
 				default: begin
 					nextState = waitingS;
 					loadGuessNow = 0;
 					GradeZnarlyNow = 0;
 					GradeZoodNow = 0;
-					IncRoundNumber = 1;
+					IncRoundNumber = 0;
 				end
         endcase
 	 end
 
+	 logic prevGradeIt, prevPrevGradeIt, GradeItNow;
     always_ff @(posedge CLOCK_50, posedge reset)
         if (reset)
             currState <= waitingS;
-        else
+        else begin
             currState <= nextState;
-	
+				prevGradeIt <= GradeIt;
+				prevPrevGradeIt <= prevGradeIt;
+				GradeItNow <= prevGradeIt & ~prevPrevGradeIt & gamePlaying;
+			end
+		
 endmodule: guessControlFsm
 
 module loadGuess(
 	input logic [11:0] Guess,
-	input logic loadGuessNow, reset, CLOCK_50,
+	input logic loadGuessNow, reset, CLOCK_50, resetMaster,
 	output logic [2:0] guess0, guess1, guess2, guess3
 	);
 	
-	register #(3) g0(Guess[2:0],  loadGuessNow, reset, CLOCK_50, guess0);
-	register #(3) g1(Guess[5:3],  loadGuessNow, reset, CLOCK_50, guess1);
-	register #(3) g2(Guess[8:6],  loadGuessNow, reset, CLOCK_50, guess2);
-	register #(3) g3(Guess[11:9], loadGuessNow, reset, CLOCK_50, guess3);
+	logic resetG;
+	assign resetG = reset | resetMaster;
+	register #(3) g0(Guess[2:0],  loadGuessNow, resetG, CLOCK_50, guess0);
+	register #(3) g1(Guess[5:3],  loadGuessNow, resetG, CLOCK_50, guess1);
+	register #(3) g2(Guess[8:6],  loadGuessNow, resetG, CLOCK_50, guess2);
+	register #(3) g3(Guess[11:9], loadGuessNow, resetG, CLOCK_50, guess3);
 
 endmodule: loadGuess

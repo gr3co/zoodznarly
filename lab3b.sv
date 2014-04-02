@@ -19,7 +19,7 @@ module chipInterface(
 	logic [11:0] Guess;
 	
 	//internal wires
-	logic masterLoaded, ready, GameOver, gamePlaying;
+	logic masterLoaded, ready, GameOver, gamePlaying, startGameNow, resetMaster;
 	logic [2:0] master0, master1, master2, master3;
 	
 	//their assignments
@@ -46,7 +46,7 @@ module chipInterface(
 	topCoinAccept  tca(.*);
 	loadMaster     lms(.*);
 	GradeGuessTop  ggt(.*);
-	assign gamePlaying = (RoundNumber > 0);
+	game_playing   igp(.*);
 	
 	/*mastermindVGA mm(CLOCK_50, VGA_R, VGA_G, VGA_B, VGA_BLANK_N,
 							VGA_CLK, VGA_SYNC_N, VGA_VS, VGA_HS,

@@ -13,13 +13,14 @@ module chipInterface(
 
 	//official wires
 	logic CoinInserted, StartGame, GradeIt, LoadShapeNow, GameWon, reset, debug;
+	logic LoadNumGames, LoadGuess, LoadZnarlyZood, clearGame, displayMasterPattern;
 	logic [1:0] CoinValue, ShapeLocation;
 	logic [2:0] LoadShape;
-	logic [3:0] NumGames, RoundNumber, Znarly, Zood;
-	logic [11:0] Guess;
+	logic [3:0] NumGames, RoundNumber, Znarly, Zood, seenOutZood;
+	logic [11:0] Guess, masterPattern;
 	
 	//internal wires
-	logic masterLoaded, ready, GameOver, gamePlaying, startGameNow, resetMaster;
+	logic masterLoaded, ready, GameOver, gamePlaying, startGameNow, resetMaster, clearMaster, GameWonOut;
 	logic [2:0] master0, master1, master2, master3;
 	
 	//their assignments
@@ -35,9 +36,17 @@ module chipInterface(
 	assign reset = ~KEY[0];
 	assign LEDG[0] = GameWon;
 	assign LEDG[1] = GameOver;
-	assign LEDG[2] = ready;
-	assign LEDG[3] = gamePlaying;
-	assign LEDG[4] = masterLoaded;
+	assign LEDG[2] = gamePlaying;
+
+	
+	
+	assign LoadNumGames = 1;
+	assign LoadGuess = gamePlaying;
+	assign LoadZnarlyZood = gamePlaying;
+	assign clearGame = resetMaster;
+	assign masterPattern = {master3, master2, master1, master0};
+	assign displayMasterPattern = debug;
+	
 	BCDtoSevenSegment zn(HEX3, Znarly);
 	BCDtoSevenSegment zo(HEX2, Zood);
 	BCDtoSevenSegment rn(HEX1, RoundNumber);
@@ -48,11 +57,11 @@ module chipInterface(
 	GradeGuessTop  ggt(.*);
 	game_playing   igp(.*);
 	
-	/*mastermindVGA mm(CLOCK_50, VGA_R, VGA_G, VGA_B, VGA_BLANK_N,
+	mastermindVGA mm(CLOCK_50, VGA_R, VGA_G, VGA_B, VGA_BLANK_N,
 							VGA_CLK, VGA_SYNC_N, VGA_VS, VGA_HS,
 							NumGames, LoadNumGames, RoundNumber, Guess,
 							LoadGuess, Znarly, Zood, LoadZnarlyZood, 
-							clearGame, masterPattern, displayMasterPattern, reset);*/
+							clearGame, masterPattern, displayMasterPattern, reset);
 
 endmodule: chipInterface
 

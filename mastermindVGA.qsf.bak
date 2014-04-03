@@ -588,10 +588,13 @@ set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SYSTEMVERILOG_FILE mastermindVGA.sv
 set_global_assignment -name SYSTEMVERILOG_FILE lab3b.sv
 set_global_assignment -name SYSTEMVERILOG_FILE hw7prob1.sv
 set_global_assignment -name SYSTEMVERILOG_FILE coinaccepting.sv
 set_global_assignment -name SYSTEMVERILOG_FILE loadingmaster.sv
 set_global_assignment -name SYSTEMVERILOG_FILE gradeguess.sv
+set_global_assignment -name SYSTEMVERILOG_FILE game_playing.sv
+set_global_assignment -name SYSTEMVERILOG_FILE gradeZood.sv
+set_global_assignment -name SYSTEMVERILOG_FILE gradeZnarly.sv
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

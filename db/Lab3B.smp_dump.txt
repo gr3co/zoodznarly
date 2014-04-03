@@ -14,21 +14,22 @@ currState.gradeZoodS 1 0 0 1 0
 currState.doneS 0 0 0 1 1 
 
 State Machine - |chipInterface|GradeGuessTop:ggt|GradeZood:gz0|currentState
-Name currentState.done currentState.check0 currentState.check3 currentState.check2 currentState.check1 currentState.waiting 
-currentState.waiting 0 0 0 0 0 0 
-currentState.check1 0 0 0 0 1 1 
-currentState.check2 0 0 0 1 0 1 
-currentState.check3 0 0 1 0 0 1 
-currentState.check0 0 1 0 0 0 1 
-currentState.done 1 0 0 0 0 1 
+Name currentState.done currentState.changeZ currentState.check3 currentState.check2 currentState.check1 currentState.check0 currentState.waiting 
+currentState.waiting 0 0 0 0 0 0 0 
+currentState.check0 0 0 0 0 0 1 1 
+currentState.check1 0 0 0 0 1 0 1 
+currentState.check2 0 0 0 1 0 0 1 
+currentState.check3 0 0 1 0 0 0 1 
+currentState.changeZ 0 1 0 0 0 0 1 
+currentState.done 1 0 0 0 0 0 1 
 
-State Machine - |chipInterface|GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:comb_3|currentState
-Name currentState.done currentState.check0 currentState.check3 currentState.check2 currentState.check1 currentState.waiting 
+State Machine - |chipInterface|GradeGuessTop:ggt|GradeZood:gz0|GradeZoodIndex:idg|currentState
+Name currentState.done currentState.check3 currentState.check2 currentState.check1 currentState.check0 currentState.waiting 
 currentState.waiting 0 0 0 0 0 0 
-currentState.check1 0 0 0 0 1 1 
-currentState.check2 0 0 0 1 0 1 
-currentState.check3 0 0 1 0 0 1 
-currentState.check0 0 1 0 0 0 1 
+currentState.check0 0 0 0 0 1 1 
+currentState.check1 0 0 0 1 0 1 
+currentState.check2 0 0 1 0 0 1 
+currentState.check3 0 1 0 0 0 1 
 currentState.done 1 0 0 0 0 1 
 
 State Machine - |chipInterface|topCoinAccept:tca|coinAccept:ca|currState

@@ -2,76 +2,40 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZnarlyS'
-Slack : -2.448
-TNS   : -15.919
-
 Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
-Slack : -2.202
-TNS   : -70.294
+Slack : -3.290
+TNS   : -494.603
 
 Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
-Slack : -0.174
-TNS   : -0.174
-
-Type  : Slow 1200mV 85C Model Hold 'GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZnarlyS'
-Slack : 0.696
+Slack : 0.386
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -82.670
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZnarlyS'
-Slack : -1.285
-TNS   : -10.280
-
-Type  : Slow 1200mV 0C Model Setup 'GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZnarlyS'
-Slack : -2.163
-TNS   : -13.987
+TNS   : -342.240
 
 Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -1.873
-TNS   : -58.410
+Slack : -2.871
+TNS   : -430.769
 
 Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
-Slack : -0.065
-TNS   : -0.065
-
-Type  : Slow 1200mV 0C Model Hold 'GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZnarlyS'
-Slack : 0.648
+Slack : 0.339
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -82.670
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZnarlyS'
-Slack : -1.285
-TNS   : -10.280
-
-Type  : Fast 1200mV 0C Model Setup 'GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZnarlyS'
-Slack : -0.722
-TNS   : -3.927
+TNS   : -342.240
 
 Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -0.549
-TNS   : -9.312
+Slack : -1.087
+TNS   : -114.661
 
 Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
-Slack : -0.298
-TNS   : -0.298
-
-Type  : Fast 1200mV 0C Model Hold 'GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZnarlyS'
-Slack : 0.302
+Slack : 0.174
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -68.822
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'GradeGuessTop:ggt|guessControlFsm:gcfsm|currState.gradeZnarlyS'
-Slack : -1.000
-TNS   : -8.000
+TNS   : -283.387
 
 ------------------------------------------------------------
